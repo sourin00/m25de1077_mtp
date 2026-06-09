@@ -1,103 +1,105 @@
-"""Honest IoU on a representative sample.
+"""Headline detection result: SAE-feature probe vs flag-all, honest and multilingual.
 
-The seed-13 80-item pilot sample is hallucination-saturated, so flag-all scored ~0.336 and the
-probe could barely clear it on IoU even with AUROC 0.78 — the metric had no room. This widens
-the draw (CFG.eval_per_lang per language) so density regresses toward the true Mu-SHROOM test
-distribution, trains the SAE-feature probe on a train split, calibrates its threshold on TRAIN
-(no leakage), and reports on held-out TEST:
+Representative draw (CFG.eval_per_lang) so density isn't saturated; SAE-feature probe trained
+and PER-LANGUAGE-calibrated on a train split (per-lang thresholds rescue zh); evaluated on
+held-out test. Repeated over several seeds for mean +/- std. Reports floors, probe IoU,
+per-language IoU, token-AUROC, and the lift over flag-all.
 
-  - hallucination DENSITY of the sample (to confirm it's less saturated than the pilot draw)
-  - FLAG-ALL and FLAG-NONE IoU (the floors)
-  - SAE-probe IoU and its LIFT over flag-all  <- the headline: does AUROC convert to IoU?
-  - token-level AUROC (leakage-free)
+Features are extracted once (cached by features.py); each seed only re-splits, re-fits the
+logistic head, re-calibrates, and re-scores — so the seeds are cheap.
 
-If the probe clears flag-all by a real margin here, the white-box signal is leaderboard-relevant
-and the dense-sample IoU was just base-rate compression. If it still hugs flag-all, the IoU
-story is genuinely weak regardless of sample.
-
-Run:  python iou_eval.py     (Gemma on MPS; scales with CFG.eval_per_lang — minutes)
+Run:  python iou_eval.py
 """
 import numpy as np
-import torch
-from sklearn.linear_model import LogisticRegression
-from sklearn.preprocessing import StandardScaler
 from sklearn.metrics import roc_auc_score
 
 from config import CFG
 from data import load_sample
-from wb import load_model, tokenize_with_offsets, token_labels, merge_flagged_spans
+from wb import load_model
 import metrics
-from sage import load_sae, extract
+import features as F
+import probe as P
+
+SEEDS = [13, 41, 97]
+
+
+def _ms(xs):
+    a = np.array(xs, dtype=float)
+    return f"{a.mean():.3f} +/- {a.std():.3f}"
 
 
 def run():
     model = load_model(CFG.sage_model)
-    sae = load_sae()
+    sae = F.load_sae()
     items = load_sample(CFG.eval_per_lang)
 
-    kept, feats, offs, labels = [], [], [], []
-    dens = []
-    for it in items:
-        if not (it.answer or "").strip():
+    data, dens = [], []
+    for i, it in enumerate(items):
+        f = F.item_features(model, it)
+        if f is None:
             continue
-        ans_ids, offsets = tokenize_with_offsets(model, it.answer)
-        if not ans_ids:
-            continue
-        q_ids, _ = tokenize_with_offsets(model, (it.question or "") + "\n")
-        resid, _ = extract(model, q_ids, ans_ids, CFG.sage_layer)
-        with torch.no_grad():
-            feat = sae.encode(resid.to(CFG.sae_device)).float().cpu().numpy()
-        lab = np.array(token_labels(offsets, it.hard_labels))
-        kept.append(it); feats.append(feat); offs.append(offsets); labels.append(lab)
-        gold_chars = sum(int(e) - int(s) for s, e in (it.hard_labels or []))
-        dens.append(gold_chars / max(1, len(it.answer)))
-    print(f"\n{len(kept)} items | mean hallucination density "
-          f"{np.mean(dens):.2f} (pilot seed-13 draw was ~0.45+)")
+        acts = F.sae_encode(sae, f["resid"])
+        data.append({"item": it, "acts": acts, "offs": f["offsets"], "lab": f["labels"]})
+        gold = sum(int(e) - int(s) for s, e in (it.hard_labels or []))
+        dens.append(gold / max(1, len(it.answer or "")))
+        if (i + 1) % 40 == 0:
+            print(f"  ...features for {i + 1}/{len(items)} items")
+    n = len(data)
+    print(f"\n{n} items | mean hallucination density {np.mean(dens):.2f}")
 
-    rng = np.random.default_rng(CFG.seed)
-    order = np.arange(len(kept)); rng.shuffle(order)
-    n_test = max(1, int(round(CFG.probe_test_frac * len(kept))))
-    test = set(order[:n_test].tolist())
-    tr = [i for i in range(len(kept)) if i not in test]
-    te = [i for i in range(len(kept)) if i in test]
+    langs = sorted(set(d["item"].lang for d in data))
+    agg = {"flag_all": [], "probe": [], "auroc": [], "lift": []}
+    per_lang = {l: {"flag_all": [], "probe": []} for l in langs}
 
-    Xtr = np.concatenate([feats[i] for i in tr]); ytr = np.concatenate([labels[i] for i in tr])
-    keep = (Xtr > 0).mean(0) >= 0.005
-    if keep.sum() < 50:
-        keep = (Xtr > 0).mean(0) > 0
-    sc = StandardScaler().fit(Xtr[:, keep])
-    clf = LogisticRegression(max_iter=2000, class_weight="balanced", C=0.5)
-    clf.fit(sc.transform(Xtr[:, keep]), ytr)
-    prob = [clf.predict_proba(sc.transform(f[:, keep]))[:, 1] for f in feats]
-    print(f"Train tokens {len(ytr)} ({int(ytr.sum())} halluc) | test items {len(te)} | "
-          f"SAE feats kept {int(keep.sum())}/{Xtr.shape[1]}")
+    for seed in SEEDS:
+        rng = np.random.default_rng(seed)
+        order = np.arange(n); rng.shuffle(order)
+        n_test = max(1, int(round(CFG.probe_test_frac * n)))
+        test = set(order[:n_test].tolist())
+        tr = [i for i in range(n) if i not in test]
+        te = [i for i in range(n) if i in test]
 
-    def probe_preds(idxs, thr):
-        return [merge_flagged_spans(offs[i], [p > thr for p in prob[i]]) for i in idxs]
+        Xtr = np.concatenate([data[i]["acts"] for i in tr])
+        ytr = np.concatenate([data[i]["lab"] for i in tr]).astype(int)
+        pb = P.train(Xtr, ytr)
+        prob = [P.predict(pb, d["acts"]) for d in data]
 
-    tr_obj = [kept[i] for i in tr]
-    best_thr, best = 0.5, -1.0
-    for thr in np.linspace(0.05, 0.9, 18):
-        o, _ = metrics.mean_iou(tr_obj, probe_preds(tr, thr))
-        if o > best:
-            best, best_thr = o, float(thr)
+        tr_items = [data[i]["item"] for i in tr]
+        tr_prob = [prob[i] for i in tr]
+        tr_offs = [data[i]["offs"] for i in tr]
+        thr = P.calibrate(tr_items, tr_prob, tr_offs, per_language=True)
 
-    te_obj = [kept[i] for i in te]
-    flag_all = [[[0, len(kept[i].answer)]] if kept[i].answer.strip() else [] for i in te]
-    flag_none = [[] for _ in te]
-    fa, _ = metrics.mean_iou(te_obj, flag_all)
-    metrics.report("FLAG-ALL", te_obj, flag_all)
-    metrics.report("FLAG-NONE", te_obj, flag_none)
-    pr_overall = metrics.report(f"SAE probe (thr={best_thr:.2f}, train-calibrated)",
-                                te_obj, probe_preds(te, best_thr))
+        te_items = [data[i]["item"] for i in te]
+        te_prob = [prob[i] for i in te]
+        te_offs = [data[i]["offs"] for i in te]
 
-    pr = np.concatenate([prob[i] for i in te]); lb = np.concatenate([labels[i] for i in te])
-    auroc = roc_auc_score(lb, pr) if len(set(lb.tolist())) > 1 else float("nan")
-    print(f"\nToken-level AUROC (test): {auroc:.3f}")
-    print(f"IoU LIFT over flag-all: {pr_overall - fa:+.3f}   "
-          f"(probe {pr_overall:.3f} vs flag-all {fa:.3f})")
-    print("\nRead: a clearly positive lift here = the 0.78 AUROC converts to real IoU once the")
-    print("sample isn't base-rate-saturated, and the white-box probe is leaderboard-relevant.")
+        flag_all = [[[0, len(it.answer)]] if (it.answer or "").strip() else [] for it in te_items]
+        probe_spans = P.predict_spans(te_items, te_prob, te_offs, thr)
+
+        fa_o, fa_by = metrics.mean_iou(te_items, flag_all)
+        pr_o, pr_by = metrics.mean_iou(te_items, probe_spans)
+        lb = np.concatenate([data[i]["lab"] for i in te]).astype(int)
+        pr_tok = np.concatenate(te_prob)
+        au = roc_auc_score(lb, pr_tok) if len(set(lb.tolist())) > 1 else float("nan")
+
+        agg["flag_all"].append(fa_o); agg["probe"].append(pr_o)
+        agg["auroc"].append(au); agg["lift"].append(pr_o - fa_o)
+        for l in langs:
+            if l in pr_by:
+                per_lang[l]["flag_all"].append(fa_by.get(l, 0.0))
+                per_lang[l]["probe"].append(pr_by[l])
+        print(f"seed {seed}: probe IoU {pr_o:.3f} | flag-all {fa_o:.3f} | "
+              f"AUROC {au:.3f} | thr {({k: round(v,2) for k,v in thr.items()})}")
+
+    print("\n=== detection result over seeds " + str(SEEDS) + " (mean +/- std) ===")
+    print(f"  token-AUROC      {_ms(agg['auroc'])}")
+    print(f"  FLAG-ALL IoU     {_ms(agg['flag_all'])}")
+    print(f"  SAE-probe IoU    {_ms(agg['probe'])}")
+    print(f"  LIFT over flag-all {_ms(agg['lift'])}")
+    print("\n  per-language IoU (probe vs flag-all):")
+    for l in langs:
+        print(f"    {l}: probe {_ms(per_lang[l]['probe'])}  |  flag-all {_ms(per_lang[l]['flag_all'])}")
+    print("\nThis is Table 1. Lead the writeup with AUROC + lift; report the UCSC IoU gap plainly.")
 
 
 if __name__ == "__main__":

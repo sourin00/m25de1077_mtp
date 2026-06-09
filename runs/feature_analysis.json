@@ -1,0 +1,1302 @@
+[
+  {
+    "rank": 1,
+    "feature": 2620,
+    "weight": -1.076,
+    "halluc_mean": 9.25,
+    "faithful_mean": 12.442,
+    "direction": "↓halluc",
+    "freq": 0.852,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/2620",
+    "examples": [
+      {
+        "lang": "en",
+        "token": "Adriana",
+        "act": 35.89281463623047
+      },
+      {
+        "lang": "en",
+        "token": "ersdorf",
+        "act": 35.80678939819336
+      },
+      {
+        "lang": "en",
+        "token": " lisboa",
+        "act": 34.489933013916016
+      },
+      {
+        "lang": "en",
+        "token": " reign",
+        "act": 34.3863639831543
+      },
+      {
+        "lang": "es",
+        "token": "cés",
+        "act": 34.21430206298828
+      },
+      {
+        "lang": "en",
+        "token": "Bah",
+        "act": 33.31398391723633
+      },
+      {
+        "lang": "cs",
+        "token": "vo",
+        "act": 33.20287322998047
+      },
+      {
+        "lang": "en",
+        "token": "ant",
+        "act": 32.92584991455078
+      }
+    ]
+  },
+  {
+    "rank": 2,
+    "feature": 14947,
+    "weight": 0.856,
+    "halluc_mean": 0.367,
+    "faithful_mean": 0.018,
+    "direction": "↑halluc",
+    "freq": 0.015,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/14947",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": " Chambers",
+        "act": 34.779380798339844
+      },
+      {
+        "lang": "zh",
+        "token": "拳",
+        "act": 33.50609588623047
+      },
+      {
+        "lang": "zh",
+        "token": "击",
+        "act": 31.377254486083984
+      },
+      {
+        "lang": "zh",
+        "token": "世界",
+        "act": 29.988662719726562
+      },
+      {
+        "lang": "zh",
+        "token": " Boxing",
+        "act": 29.60216522216797
+      },
+      {
+        "lang": "zh",
+        "token": "2",
+        "act": 28.246414184570312
+      },
+      {
+        "lang": "zh",
+        "token": " 轻",
+        "act": 27.316387176513672
+      },
+      {
+        "lang": "zh",
+        "token": "比赛",
+        "act": 26.446598052978516
+      }
+    ]
+  },
+  {
+    "rank": 3,
+    "feature": 13319,
+    "weight": -0.595,
+    "halluc_mean": 0.001,
+    "faithful_mean": 0.065,
+    "direction": "↓halluc",
+    "freq": 0.006,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/13319",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " sangre",
+        "act": 28.933073043823242
+      },
+      {
+        "lang": "es",
+        "token": " azúcar",
+        "act": 28.455480575561523
+      },
+      {
+        "lang": "es",
+        "token": " sangre",
+        "act": 28.05203628540039
+      },
+      {
+        "lang": "es",
+        "token": " niveles",
+        "act": 26.08363914489746
+      },
+      {
+        "lang": "es",
+        "token": " azúcar",
+        "act": 24.607398986816406
+      },
+      {
+        "lang": "es",
+        "token": " elevados",
+        "act": 24.438587188720703
+      },
+      {
+        "lang": "es",
+        "token": " sangre",
+        "act": 23.66179656982422
+      },
+      {
+        "lang": "es",
+        "token": " en",
+        "act": 20.482892990112305
+      }
+    ]
+  },
+  {
+    "rank": 4,
+    "feature": 8915,
+    "weight": -0.571,
+    "halluc_mean": 0.028,
+    "faithful_mean": 0.209,
+    "direction": "↓halluc",
+    "freq": 0.013,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/8915",
+    "examples": [
+      {
+        "lang": "en",
+        "token": "oid",
+        "act": 28.377717971801758
+      },
+      {
+        "lang": "en",
+        "token": " bones",
+        "act": 26.382417678833008
+      },
+      {
+        "lang": "en",
+        "token": "phen",
+        "act": 25.98387908935547
+      },
+      {
+        "lang": "en",
+        "token": " Palatine",
+        "act": 25.91530418395996
+      },
+      {
+        "lang": "en",
+        "token": " bone",
+        "act": 25.831031799316406
+      },
+      {
+        "lang": "en",
+        "token": "moid",
+        "act": 24.744108200073242
+      },
+      {
+        "lang": "en",
+        "token": " Frontal",
+        "act": 23.705432891845703
+      },
+      {
+        "lang": "en",
+        "token": "illa",
+        "act": 23.550952911376953
+      }
+    ]
+  },
+  {
+    "rank": 5,
+    "feature": 1102,
+    "weight": 0.522,
+    "halluc_mean": 0.085,
+    "faithful_mean": 0.02,
+    "direction": "↑halluc",
+    "freq": 0.006,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/1102",
+    "examples": [
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 25.702219009399414
+      },
+      {
+        "lang": "cs",
+        "token": "ře",
+        "act": 23.57524871826172
+      },
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 23.427736282348633
+      },
+      {
+        "lang": "cs",
+        "token": "ře",
+        "act": 23.195192337036133
+      },
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 22.820404052734375
+      },
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 22.718910217285156
+      },
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 21.877025604248047
+      },
+      {
+        "lang": "cs",
+        "token": "te",
+        "act": 19.636098861694336
+      }
+    ]
+  },
+  {
+    "rank": 6,
+    "feature": 10420,
+    "weight": 0.492,
+    "halluc_mean": 0.641,
+    "faithful_mean": 0.192,
+    "direction": "↑halluc",
+    "freq": 0.046,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/10420",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "队",
+        "act": 20.63118553161621
+      },
+      {
+        "lang": "es",
+        "token": " oro",
+        "act": 20.322675704956055
+      },
+      {
+        "lang": "zh",
+        "token": "2",
+        "act": 19.788455963134766
+      },
+      {
+        "lang": "zh",
+        "token": "运动员",
+        "act": 19.370956420898438
+      },
+      {
+        "lang": "zh",
+        "token": "牌",
+        "act": 18.282001495361328
+      },
+      {
+        "lang": "zh",
+        "token": "纪录",
+        "act": 18.213504791259766
+      },
+      {
+        "lang": "zh",
+        "token": "中国",
+        "act": 17.979761123657227
+      },
+      {
+        "lang": "zh",
+        "token": "打破",
+        "act": 17.77295684814453
+      }
+    ]
+  },
+  {
+    "rank": 7,
+    "feature": 1371,
+    "weight": -0.488,
+    "halluc_mean": 0.156,
+    "faithful_mean": 0.958,
+    "direction": "↓halluc",
+    "freq": 0.031,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/1371",
+    "examples": [
+      {
+        "lang": "es",
+        "token": ".",
+        "act": 35.11445236206055
+      },
+      {
+        "lang": "en",
+        "token": ".",
+        "act": 33.86160659790039
+      },
+      {
+        "lang": "en",
+        "token": ".",
+        "act": 33.717891693115234
+      },
+      {
+        "lang": "es",
+        "token": ".",
+        "act": 33.185264587402344
+      },
+      {
+        "lang": "es",
+        "token": ".",
+        "act": 32.85871505737305
+      },
+      {
+        "lang": "es",
+        "token": ".",
+        "act": 31.786640167236328
+      },
+      {
+        "lang": "en",
+        "token": ".",
+        "act": 31.724273681640625
+      },
+      {
+        "lang": "zh",
+        "token": "。",
+        "act": 31.51599884033203
+      }
+    ]
+  },
+  {
+    "rank": 8,
+    "feature": 929,
+    "weight": -0.479,
+    "halluc_mean": 0.038,
+    "faithful_mean": 0.147,
+    "direction": "↓halluc",
+    "freq": 0.013,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/929",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "巴士",
+        "act": 32.361148834228516
+      },
+      {
+        "lang": "es",
+        "token": " autobús",
+        "act": 32.095237731933594
+      },
+      {
+        "lang": "es",
+        "token": " autobús",
+        "act": 30.827749252319336
+      },
+      {
+        "lang": "es",
+        "token": " autobús",
+        "act": 28.839508056640625
+      },
+      {
+        "lang": "es",
+        "token": " horarios",
+        "act": 24.859413146972656
+      },
+      {
+        "lang": "es",
+        "token": " tren",
+        "act": 23.363245010375977
+      },
+      {
+        "lang": "es",
+        "token": " autobuses",
+        "act": 22.79227066040039
+      },
+      {
+        "lang": "es",
+        "token": " ferry",
+        "act": 22.37398338317871
+      }
+    ]
+  },
+  {
+    "rank": 9,
+    "feature": 15769,
+    "weight": -0.444,
+    "halluc_mean": 0.412,
+    "faithful_mean": 0.948,
+    "direction": "↓halluc",
+    "freq": 0.069,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/15769",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " apoyo",
+        "act": 25.92090606689453
+      },
+      {
+        "lang": "es",
+        "token": " político",
+        "act": 25.805688858032227
+      },
+      {
+        "lang": "es",
+        "token": " apoyo",
+        "act": 25.710960388183594
+      },
+      {
+        "lang": "es",
+        "token": " niveles",
+        "act": 25.54182243347168
+      },
+      {
+        "lang": "es",
+        "token": " político",
+        "act": 25.394962310791016
+      },
+      {
+        "lang": "es",
+        "token": " procesos",
+        "act": 25.225196838378906
+      },
+      {
+        "lang": "es",
+        "token": "ciones",
+        "act": 25.018278121948242
+      },
+      {
+        "lang": "es",
+        "token": " jugador",
+        "act": 24.944080352783203
+      }
+    ]
+  },
+  {
+    "rank": 10,
+    "feature": 16251,
+    "weight": -0.438,
+    "halluc_mean": 0.065,
+    "faithful_mean": 0.375,
+    "direction": "↓halluc",
+    "freq": 0.038,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/16251",
+    "examples": [
+      {
+        "lang": "cs",
+        "token": "énu",
+        "act": 22.03555679321289
+      },
+      {
+        "lang": "cs",
+        "token": " ter",
+        "act": 20.942134857177734
+      },
+      {
+        "lang": "cs",
+        "token": " Sign",
+        "act": 18.027950286865234
+      },
+      {
+        "lang": "en",
+        "token": "lé",
+        "act": 17.56468391418457
+      },
+      {
+        "lang": "cs",
+        "token": " Kol",
+        "act": 17.209917068481445
+      },
+      {
+        "lang": "cs",
+        "token": "k",
+        "act": 16.810148239135742
+      },
+      {
+        "lang": "cs",
+        "token": "lez",
+        "act": 16.646160125732422
+      },
+      {
+        "lang": "cs",
+        "token": " vstup",
+        "act": 16.2805233001709
+      }
+    ]
+  },
+  {
+    "rank": 11,
+    "feature": 4372,
+    "weight": -0.425,
+    "halluc_mean": 0.193,
+    "faithful_mean": 0.323,
+    "direction": "↓halluc",
+    "freq": 0.046,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/4372",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "南部",
+        "act": 17.25932502746582
+      },
+      {
+        "lang": "zh",
+        "token": "北部",
+        "act": 16.643695831298828
+      },
+      {
+        "lang": "zh",
+        "token": "边界",
+        "act": 16.485694885253906
+      },
+      {
+        "lang": "zh",
+        "token": "边界",
+        "act": 16.292484283447266
+      },
+      {
+        "lang": "zh",
+        "token": "穿过",
+        "act": 16.18010139465332
+      },
+      {
+        "lang": "zh",
+        "token": "北部",
+        "act": 15.915842056274414
+      },
+      {
+        "lang": "zh",
+        "token": "边",
+        "act": 15.364407539367676
+      },
+      {
+        "lang": "zh",
+        "token": "边界",
+        "act": 15.186250686645508
+      }
+    ]
+  },
+  {
+    "rank": 12,
+    "feature": 4880,
+    "weight": -0.4,
+    "halluc_mean": 0.069,
+    "faithful_mean": 0.053,
+    "direction": "↑halluc",
+    "freq": 0.009,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/4880",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " elimin",
+        "act": 26.36469268798828
+      },
+      {
+        "lang": "es",
+        "token": "vos",
+        "act": 24.791332244873047
+      },
+      {
+        "lang": "es",
+        "token": "ada",
+        "act": 23.441883087158203
+      },
+      {
+        "lang": "zh",
+        "token": "胜",
+        "act": 21.197490692138672
+      },
+      {
+        "lang": "es",
+        "token": " contra",
+        "act": 20.370651245117188
+      },
+      {
+        "lang": "zh",
+        "token": "胜",
+        "act": 20.247634887695312
+      },
+      {
+        "lang": "es",
+        "token": " Alemania",
+        "act": 17.768665313720703
+      },
+      {
+        "lang": "es",
+        "token": " final",
+        "act": 17.52771759033203
+      }
+    ]
+  },
+  {
+    "rank": 13,
+    "feature": 11616,
+    "weight": -0.397,
+    "halluc_mean": 0.134,
+    "faithful_mean": 0.645,
+    "direction": "↓halluc",
+    "freq": 0.085,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/11616",
+    "examples": [
+      {
+        "lang": "cs",
+        "token": "u",
+        "act": 20.115535736083984
+      },
+      {
+        "lang": "cs",
+        "token": "ner",
+        "act": 18.578380584716797
+      },
+      {
+        "lang": "es",
+        "token": " estadounidense",
+        "act": 17.4638729095459
+      },
+      {
+        "lang": "cs",
+        "token": "il",
+        "act": 17.248178482055664
+      },
+      {
+        "lang": "es",
+        "token": " Inglaterra",
+        "act": 17.02890396118164
+      },
+      {
+        "lang": "es",
+        "token": " femenino",
+        "act": 16.959545135498047
+      },
+      {
+        "lang": "es",
+        "token": " Manhattan",
+        "act": 16.396142959594727
+      },
+      {
+        "lang": "cs",
+        "token": "ista",
+        "act": 16.115087509155273
+      }
+    ]
+  },
+  {
+    "rank": 14,
+    "feature": 6175,
+    "weight": 0.38,
+    "halluc_mean": 0.146,
+    "faithful_mean": 0.034,
+    "direction": "↑halluc",
+    "freq": 0.012,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/6175",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " en",
+        "act": 15.78919792175293
+      },
+      {
+        "lang": "zh",
+        "token": "毛",
+        "act": 14.746467590332031
+      },
+      {
+        "lang": "es",
+        "token": " aves",
+        "act": 14.737186431884766
+      },
+      {
+        "lang": "es",
+        "token": " hermanas",
+        "act": 13.575652122497559
+      },
+      {
+        "lang": "es",
+        "token": "adas",
+        "act": 13.070451736450195
+      },
+      {
+        "lang": "es",
+        "token": " castig",
+        "act": 12.977591514587402
+      },
+      {
+        "lang": "es",
+        "token": " su",
+        "act": 12.90917682647705
+      },
+      {
+        "lang": "cs",
+        "token": "ala",
+        "act": 12.842156410217285
+      }
+    ]
+  },
+  {
+    "rank": 15,
+    "feature": 16033,
+    "weight": -0.371,
+    "halluc_mean": 0.91,
+    "faithful_mean": 0.453,
+    "direction": "↑halluc",
+    "freq": 0.06,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/16033",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "il",
+        "act": 33.79752731323242
+      },
+      {
+        "lang": "en",
+        "token": "tide",
+        "act": 33.08167266845703
+      },
+      {
+        "lang": "zh",
+        "token": "tide",
+        "act": 31.932722091674805
+      },
+      {
+        "lang": "zh",
+        "token": "nay",
+        "act": 31.52089500427246
+      },
+      {
+        "lang": "zh",
+        "token": "ourt",
+        "act": 29.741195678710938
+      },
+      {
+        "lang": "zh",
+        "token": "sur",
+        "act": 29.467607498168945
+      },
+      {
+        "lang": "zh",
+        "token": "sur",
+        "act": 28.8049373626709
+      },
+      {
+        "lang": "cs",
+        "token": "zo",
+        "act": 28.726444244384766
+      }
+    ]
+  },
+  {
+    "rank": 16,
+    "feature": 16225,
+    "weight": -0.366,
+    "halluc_mean": 0.008,
+    "faithful_mean": 0.056,
+    "direction": "↓halluc",
+    "freq": 0.006,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/16225",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 21.518108367919922
+      },
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 19.68608856201172
+      },
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 19.461544036865234
+      },
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 18.850116729736328
+      },
+      {
+        "lang": "es",
+        "token": "aciones",
+        "act": 17.317420959472656
+      },
+      {
+        "lang": "es",
+        "token": " evacu",
+        "act": 16.91610336303711
+      },
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 16.892906188964844
+      },
+      {
+        "lang": "es",
+        "token": " inund",
+        "act": 16.018569946289062
+      }
+    ]
+  },
+  {
+    "rank": 17,
+    "feature": 2291,
+    "weight": -0.355,
+    "halluc_mean": 4.975,
+    "faithful_mean": 9.179,
+    "direction": "↓halluc",
+    "freq": 0.552,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/2291",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "\n",
+        "act": 42.89655303955078
+      },
+      {
+        "lang": "zh",
+        "token": "蓝",
+        "act": 41.280120849609375
+      },
+      {
+        "lang": "zh",
+        "token": "弗",
+        "act": 40.37409973144531
+      },
+      {
+        "lang": "zh",
+        "token": "穆",
+        "act": 39.37489700317383
+      },
+      {
+        "lang": "zh",
+        "token": "玉",
+        "act": 39.29703140258789
+      },
+      {
+        "lang": "zh",
+        "token": "国际",
+        "act": 38.46160888671875
+      },
+      {
+        "lang": "zh",
+        "token": " Cork",
+        "act": 38.163597106933594
+      },
+      {
+        "lang": "zh",
+        "token": "？",
+        "act": 37.91246795654297
+      }
+    ]
+  },
+  {
+    "rank": 18,
+    "feature": 7226,
+    "weight": -0.351,
+    "halluc_mean": 0.019,
+    "faithful_mean": 0.159,
+    "direction": "↓halluc",
+    "freq": 0.013,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/7226",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " cuerpo",
+        "act": 24.929203033447266
+      },
+      {
+        "lang": "es",
+        "token": " cuerpo",
+        "act": 24.75708770751953
+      },
+      {
+        "lang": "es",
+        "token": " cuerpo",
+        "act": 22.366924285888672
+      },
+      {
+        "lang": "es",
+        "token": " cuerpo",
+        "act": 21.95339012145996
+      },
+      {
+        "lang": "es",
+        "token": " producción",
+        "act": 20.007741928100586
+      },
+      {
+        "lang": "es",
+        "token": " regula",
+        "act": 19.742687225341797
+      },
+      {
+        "lang": "es",
+        "token": " utilizar",
+        "act": 19.385950088500977
+      },
+      {
+        "lang": "es",
+        "token": "ulina",
+        "act": 18.69956398010254
+      }
+    ]
+  },
+  {
+    "rank": 19,
+    "feature": 8354,
+    "weight": -0.333,
+    "halluc_mean": 0.005,
+    "faithful_mean": 0.146,
+    "direction": "↓halluc",
+    "freq": 0.008,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/8354",
+    "examples": [
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 49.56474304199219
+      },
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 48.25095748901367
+      },
+      {
+        "lang": "en",
+        "token": "\n\n",
+        "act": 47.07158660888672
+      },
+      {
+        "lang": "cs",
+        "token": "\n\n",
+        "act": 45.17142105102539
+      },
+      {
+        "lang": "zh",
+        "token": "\n",
+        "act": 41.76039505004883
+      },
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 40.65871047973633
+      },
+      {
+        "lang": "zh",
+        "token": "\n",
+        "act": 38.48687744140625
+      },
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 38.333526611328125
+      }
+    ]
+  },
+  {
+    "rank": 20,
+    "feature": 3372,
+    "weight": -0.333,
+    "halluc_mean": 0.213,
+    "faithful_mean": 0.456,
+    "direction": "↓halluc",
+    "freq": 0.062,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/3372",
+    "examples": [
+      {
+        "lang": "cs",
+        "token": "ulty",
+        "act": 16.45549774169922
+      },
+      {
+        "lang": "zh",
+        "token": "1",
+        "act": 16.082399368286133
+      },
+      {
+        "lang": "zh",
+        "token": "成立",
+        "act": 15.77978801727295
+      },
+      {
+        "lang": "es",
+        "token": " en",
+        "act": 15.043292045593262
+      },
+      {
+        "lang": "en",
+        "token": " established",
+        "act": 15.024331092834473
+      },
+      {
+        "lang": "en",
+        "token": " established",
+        "act": 15.00846004486084
+      },
+      {
+        "lang": "zh",
+        "token": "成立",
+        "act": 14.86938190460205
+      },
+      {
+        "lang": "es",
+        "token": ",",
+        "act": 14.628935813903809
+      }
+    ]
+  },
+  {
+    "rank": 21,
+    "feature": 12554,
+    "weight": -0.301,
+    "halluc_mean": 0.399,
+    "faithful_mean": 0.232,
+    "direction": "↑halluc",
+    "freq": 0.034,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/12554",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " Agen",
+        "act": 35.30125045776367
+      },
+      {
+        "lang": "en",
+        "token": "îmes",
+        "act": 32.95685577392578
+      },
+      {
+        "lang": "en",
+        "token": "meet",
+        "act": 32.25504684448242
+      },
+      {
+        "lang": "cs",
+        "token": " Ostra",
+        "act": 30.472793579101562
+      },
+      {
+        "lang": "zh",
+        "token": "顿",
+        "act": 30.21147918701172
+      },
+      {
+        "lang": "cs",
+        "token": "lín",
+        "act": 30.16399383544922
+      },
+      {
+        "lang": "cs",
+        "token": "bram",
+        "act": 29.09871482849121
+      },
+      {
+        "lang": "es",
+        "token": " Cork",
+        "act": 28.029705047607422
+      }
+    ]
+  },
+  {
+    "rank": 22,
+    "feature": 7055,
+    "weight": -0.298,
+    "halluc_mean": 0.189,
+    "faithful_mean": 0.502,
+    "direction": "↓halluc",
+    "freq": 0.015,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/7055",
+    "examples": [
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 38.426734924316406
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 37.65825271606445
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 37.40583038330078
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 37.05219268798828
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 36.94028091430664
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 36.81732177734375
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 36.79139709472656
+      },
+      {
+        "lang": "es",
+        "token": " de",
+        "act": 36.6597785949707
+      }
+    ]
+  },
+  {
+    "rank": 23,
+    "feature": 14708,
+    "weight": 0.293,
+    "halluc_mean": 0.092,
+    "faithful_mean": 0.016,
+    "direction": "↑halluc",
+    "freq": 0.006,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/14708",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": "舞台",
+        "act": 25.25705909729004
+      },
+      {
+        "lang": "cs",
+        "token": "cen",
+        "act": 25.137216567993164
+      },
+      {
+        "lang": "zh",
+        "token": "舞台",
+        "act": 24.33642578125
+      },
+      {
+        "lang": "zh",
+        "token": "剧",
+        "act": 23.6791934967041
+      },
+      {
+        "lang": "zh",
+        "token": "剧",
+        "act": 23.185388565063477
+      },
+      {
+        "lang": "cs",
+        "token": " ins",
+        "act": 22.136272430419922
+      },
+      {
+        "lang": "cs",
+        "token": " diva",
+        "act": 20.602815628051758
+      },
+      {
+        "lang": "zh",
+        "token": "音乐",
+        "act": 19.182968139648438
+      }
+    ]
+  },
+  {
+    "rank": 24,
+    "feature": 12597,
+    "weight": -0.286,
+    "halluc_mean": 0.029,
+    "faithful_mean": 0.137,
+    "direction": "↓halluc",
+    "freq": 0.012,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/12597",
+    "examples": [
+      {
+        "lang": "zh",
+        "token": " ",
+        "act": 26.0849666595459
+      },
+      {
+        "lang": "zh",
+        "token": "\n\n",
+        "act": 20.358097076416016
+      },
+      {
+        "lang": "zh",
+        "token": "\n",
+        "act": 20.095497131347656
+      },
+      {
+        "lang": "zh",
+        "token": "\n\n",
+        "act": 19.907011032104492
+      },
+      {
+        "lang": "zh",
+        "token": "\n\n",
+        "act": 17.956584930419922
+      },
+      {
+        "lang": "zh",
+        "token": "\n\n",
+        "act": 17.949419021606445
+      },
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 17.906309127807617
+      },
+      {
+        "lang": "es",
+        "token": "\n\n",
+        "act": 17.81968879699707
+      }
+    ]
+  },
+  {
+    "rank": 25,
+    "feature": 10410,
+    "weight": 0.285,
+    "halluc_mean": 0.21,
+    "faithful_mean": 0.043,
+    "direction": "↑halluc",
+    "freq": 0.018,
+    "neuronpedia": "https://www.neuronpedia.org/gemma-2-2b/12-gemmascope-res-16k/10410",
+    "examples": [
+      {
+        "lang": "en",
+        "token": " material",
+        "act": 17.31810760498047
+      },
+      {
+        "lang": "zh",
+        "token": "材料",
+        "act": 16.47397804260254
+      },
+      {
+        "lang": "zh",
+        "token": "材料",
+        "act": 15.990243911743164
+      },
+      {
+        "lang": "zh",
+        "token": "木材",
+        "act": 15.525606155395508
+      },
+      {
+        "lang": "zh",
+        "token": "材料",
+        "act": 14.810901641845703
+      },
+      {
+        "lang": "en",
+        "token": " used",
+        "act": 14.738479614257812
+      },
+      {
+        "lang": "zh",
+        "token": "纶",
+        "act": 14.020805358886719
+      },
+      {
+        "lang": "zh",
+        "token": "夫",
+        "act": 14.007736206054688
+      }
+    ]
+  }
+]

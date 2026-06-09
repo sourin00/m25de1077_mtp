@@ -13,7 +13,7 @@ from dataclasses import dataclass
 class Config:
     # --- data ---
     hf_dataset: str = "Helsinki-NLP/mu-shroom"
-    split: str = "validation"               # validation carries gold soft/hard labels
+    # split: str = "validation"               # validation carries gold soft/hard labels
     langs: tuple = ("es", "cs", "zh", "en")  # Spanish, Czech, Mandarin + English anchor
     sample_per_lang: int = 20
     eval_per_lang: int = 60                  # larger draw for the honest (representative) IoU run
