@@ -72,8 +72,9 @@ def _normalize(r, lang):
     )
 
 
-def load_sample():
+def load_sample(n=None):
     rng = random.Random(CFG.seed)
+    k = n or CFG.sample_per_lang
     out = []
     printed_cols = False
 
@@ -89,7 +90,7 @@ def load_sample():
 
         items = [_normalize(r, lang) for r in ds]
         rng.shuffle(items)
-        picked = items[: CFG.sample_per_lang]
+        picked = items[:k]
         labeled = sum(1 for it in picked if it.hard_labels)
         print(f"[data] {lang}: {len(picked)} sampled "
               f"(test, {labeled}/{len(picked)} have hard_labels)")

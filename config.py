@@ -16,6 +16,7 @@ class Config:
     split: str = "validation"               # validation carries gold soft/hard labels
     langs: tuple = ("es", "cs", "zh", "en")  # Spanish, Czech, Mandarin + English anchor
     sample_per_lang: int = 20
+    eval_per_lang: int = 60                  # larger draw for the honest (representative) IoU run
     seed: int = 13
 
     # --- white-box (MPS validated faithful vs CPU for Llama-3.2 on your machine) ---
