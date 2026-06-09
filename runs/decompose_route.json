@@ -1,0 +1,2622 @@
+[
+  {
+    "id": "tst-es-40",
+    "lang": "es",
+    "question": "¿Cómo se llama el director de  la primera película de ciencia ficción \"Viaje a la Luna\"?",
+    "answer": "El director de la primera película de ciencia ficción \"Viaje a la Luna\" es Fritz Lang.",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "El director de la primera película de ciencia ficción 'Viaje a la Luna' es Fritz Lang.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-98",
+    "lang": "es",
+    "question": "¿Alrededor de qué cuerpo celeste orbita el asteroide (5757) Tichá?",
+    "answer": "El asteroide (5757) Tichá orbita alrededor de la Tierra. Sin embargo, es importante mencionar que en términos más amplios, también orbita alrededor del Sol, ya que todos los objetos en el sistema solar, incluyendo planetas y sus satélites, orbitan alrededor del Sol.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "El asteroide (5757) Tichá orbita alrededor de la Tierra.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Todos los objetos en el sistema solar, incluyendo planetas y sus satélites, orbitan alrededor del Sol.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-134",
+    "lang": "es",
+    "question": "¿Está en aumento la población de Mileto en Calabria?",
+    "answer": "Según los datos del Instituto Nacional de Estadística (ISTAT) italiano, la población de Mileto, un municipio en la región de Calabria, ha experimentado un lento declive en las últimas décadas.\n\nEn 1991, la población de Mileto era de aproximadamente 4.400 habitantes. En 2011, la población había disminuido a 3.600 habitantes, y en 2020, según los datos más recientes, la población era de aproximadamente 3.300 habitantes.\n\nPor lo tanto, no hay un aumento en la población de Mileto en Calabria, sino más bien un declive lento y constante en las últimas décadas. Esto puede ser debido a una combinación de factores, como la emigración a otras regiones o países, la envejecimiento de la población y la falta de oportunidades económicas en la zona.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "Según los datos del Instituto Nacional de Estadística (ISTAT) italiano, la población de Mileto ha experimentado un lento declive en las últimas décadas.",
+        "type": "External"
+      },
+      {
+        "claim": "En 1991, la población de Mileto era de aproximadamente 4.400 habitantes.",
+        "type": "External"
+      },
+      {
+        "claim": "En 2011, la población de Mileto había disminuido a 3.600 habitantes.",
+        "type": "External"
+      },
+      {
+        "claim": "En 2020, según los datos más recientes, la población de Mileto era de aproximadamente 3.300 habitantes.",
+        "type": "External"
+      },
+      {
+        "claim": "No hay un aumento en la población de Mileto en Calabria.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "La población de Mileto ha experimentado una disminución constante en las últimas décadas.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-33",
+    "lang": "es",
+    "question": "¿Qué país desarroló el misil balístico JL-2?",
+    "answer": "El misil balístico JL-2 (NATO designation: CSS-N-14 Sardine) fue desarrollado por la República Popular China. Fue lanzado por primera vez en 2005 y tiene un alcance de aproximadamente 7.000 km. Es un misil balístico de medio alcance que puede llevar una carga nuclear o convencional y es parte de la armada china.",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "El misil balístico JL-2 fue desarrollado por la República Popular China.",
+        "type": "Relational"
+      },
+      {
+        "claim": "El misil balístico JL-2 tiene un alcance de aproximadamente 7.000 km.",
+        "type": "External"
+      },
+      {
+        "claim": "El misil balístico JL-2 puede llevar una carga nuclear o convencional.",
+        "type": "External"
+      },
+      {
+        "claim": "El misil balístico JL-2 es parte de la armada china.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-16",
+    "lang": "es",
+    "question": " ¿Qué tipo de animal es Hylarana elberti?",
+    "answer": "Hylarana elberti es un tipo de ranita o salamandra de la familia Ranidae. Es originaria de Asia, específicamente de China y Vietnam. También se conoce como Hylarana elberti, Hylarana boulengeri o Hylarana fangchengshanensis. Es una especie pequeña que puede alcanzar unos 50-60 mm de longitud. Se encuentra en bosques húmedos y montanos.",
+    "n_atoms": 9,
+    "atoms": [
+      {
+        "claim": "Hylarana elberti es un tipo de ranita o salamandra",
+        "type": "External"
+      },
+      {
+        "claim": "Hylarana elberti pertenece a la familia Ranidae",
+        "type": "Relational"
+      },
+      {
+        "claim": "Hylarana elberti es originaria de Asia",
+        "type": "Relational"
+      },
+      {
+        "claim": "Hylarana elberti se encuentra en China",
+        "type": "Relational"
+      },
+      {
+        "claim": "Hylarana elberti se encuentra en Vietnam",
+        "type": "Relational"
+      },
+      {
+        "claim": "Hylarana elberti también se conoce como Hylarana boulengeri",
+        "type": "Relational"
+      },
+      {
+        "claim": "Hylarana elberti también se conoce como Hylarana fangchengshanensis",
+        "type": "Relational"
+      },
+      {
+        "claim": "La longitud de Hylarana elberti es de 50-60 mm",
+        "type": "External"
+      },
+      {
+        "claim": "Hylarana elberti habita en bosques húmedos y montanos",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-55",
+    "lang": "es",
+    "question": "¿Con qué países colinda la provincia de Oudalan en Burkina Faso?",
+    "answer": "La provincia de Oudalan en Burkina Faso colinda con los siguientes países:\n\n1. República Centroafricana al norte.\n2. Sudán del Sur al este.\n3. Malawi al sureste.\n4. Togo al oeste.\n5. Côte d'Ivoire al noroeste.\n6. Ghana al noroeste (a través del río Volta).\n7. Níger al sur.",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con la República Centroafricana al norte.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Sudán del Sur al este.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Malawi al sureste.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Togo al oeste.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Côte d'Ivoire al noroeste.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Ghana al noroeste a través del río Volta.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La provincia de Oudalan en Burkina Faso colinda con Níger al sur.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-53",
+    "lang": "es",
+    "question": "¿En qué deporte es reconocida la canadiense Karen Percy y cuál es uno de sus logros más notables?",
+    "answer": "Karen Percy es una atleta canadiense reconocida en el deporte del esquí de fondo. Uno de sus logros más notables es ganar una medalla de oro en el evento de 4x5 km en los Juegos Olímpicos de Invierno de 1998 en Nagano, Japón.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "Karen Percy es una atleta canadiense",
+        "type": "External"
+      },
+      {
+        "claim": "Karen Percy es reconocida en el deporte del esquí de fondo",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Uno de los logros más notables de Karen Percy es ganar una medalla de oro",
+        "type": "Subjective"
+      },
+      {
+        "claim": "La medalla de oro la ganó en el evento de 4x5 km",
+        "type": "Relational"
+      },
+      {
+        "claim": "El evento tuvo lugar en los Juegos Olímpicos de Invierno de 1998",
+        "type": "Relational"
+      },
+      {
+        "claim": "Los Juegos Olímpicos de Invierno de 1998 se llevaron a cabo en Nagano, Japón",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-102",
+    "lang": "es",
+    "question": "¿Con qué premios fue galardonada la palícula estadounidense \"Sweet Home alabama\"?",
+    "answer": "La película estadounidense \"Sweet Home Alabama\" (2002) no ganó premios importantes en la industria cinematográfica. Sin embargo, fue nominada a varios premios y ganó algunos reconocimientos. Algunos de los premios y nominaciones que recibió la película son:\n\n* Premios Teen Choice Awards (2003): Nominada a \"Mejor Película Romántica\" y \"Mejor Actriz\" (Reese Witherspoon)\n* Premios MTV Movie Awards (2003): Nominada a \"Mejor Película\" y \"Mejor Actriz\" (Reese Witherspoon)\n* Premios Golden Trailer Awards (2003): Ganó el premio a \"Mejor Comedia\"\n* Premios Teen Choice Awards (2003): Ganó el premio a \"Mejor Actriz de Comedia\" (Reese Witherspoon)\n\nEs importante destacar que aunque no ganó premios importantes, la película fue un éxito comercial y recibió críticas generalmente positivas.",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "La película estadounidense 'Sweet Home Alabama' (2002) no ganó premios importantes en la industria cinematográfica.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' fue nominada a Mejor Película Romántica en los Premios Teen Choice Awards 2003",
+        "type": "Relational"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' fue nominada para Mejor Actriz (Reese Witherspoon) en los Premios Teen Choice Awards 2003",
+        "type": "Relational"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' fue nominada a Mejor Película en los MTV Movie Awards 2003",
+        "type": "Relational"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' fue nominada para Mejor Actriz (Reese Witherspoon) en los MTV Movie Awards 2003",
+        "type": "Relational"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' ganó el premio a Mejor Comedia en los Premios Golden Trailer Awards 2003",
+        "type": "Relational"
+      },
+      {
+        "claim": "La película 'Sweet Home Alabama' ganó el premio a Mejor Actriz de Comedia (Reese Witherspoon) en los Premios Teen Choice Awards 2003",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-13",
+    "lang": "es",
+    "question": "¿Cómo protegen de inundaciones a las zonas de marisma ubicadas en Inglaterra conocidas como los Fens o Fenland?",
+    "answer": "Para proteger las zonas de marisma en Inglaterra, conocidas como The Fens o Fenland, de las inundaciones, se han implementado varias medidas de protección. Estas incluyen:\n\n1. Drenaje: El sistema de drenaje en The Fens está diseñado para eliminar el exceso de agua de las zonas de marisma. El sistema incluye canales, acequias y diques que ayudan a gestionar el flujo de agua y prevenir inundaciones.\n\n2. Dikes: Se han construido diques alrededor de algunas áreas de The Fens para prevenir inundaciones. Estos diques actúan como una barrera, previniendo que el agua de inundación entre en las áreas protegidas.\n\n3. Gestión de humedales: La gestión de humedales es esencial para mantener el equilibrio natural de The Fens y prevenir inundaciones. Esto incluye el corte de hierba, la gestión de plantas acuáticas y la manipulación de niveles de agua para mantener un entorno saludable para la vida silvestre y el ecosistema.\n\n4. Monitoreo y alertas: El Servicio de Agua y Drenaje de Inglaterra monitorea regularmente los niveles de agua en The Fens y emite alertas cuando se anticipa una inundación. Esto permite una acción temprana y medidas de prevención.\n\n5. Planificación de emergencia: Las autoridades locales tienen planes de emergencia en lugar para responder a las inundaciones. Estos planes incluyen la evacuación de áreas en riesgo, la provisión de refugio y la coordinación con servicios de emergencia.\n\n6. Restricciones de construcción: Las áreas de marisma en The Fens están protegidas por ley, lo que limita el desarrollo y la construcción en estas áreas. Esto ayuda a mantener el equilibrio natural de los humedales y prevenir la alteración de los sistemas naturales de drenaje.\n\n7. Educación pública: La educación pública y la conciencia sobre los riesgos de inundación y la importancia de la gestión de humedales ayudan a promover la responsabilidad comunitaria en la prevención de inundaciones en The Fens.",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "Para proteger las zonas de marisma en Inglaterra, conocidas como The Fens o Fenland, se ha implementado un sistema de drenaje que incluye canales, acequias y diques.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Se han construido diques alrededor de algunas áreas de The Fens para prevenir inundaciones.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La gestión de humedales en The Fens incluye el corte de hierba, la gestión de plantas acuáticas y la manipulación de niveles de agua.",
+        "type": "Relational"
+      },
+      {
+        "claim": "El Servicio de Agua y Drenaje de Inglaterra monitorea regularmente los niveles de agua en The Fens y emite alertas cuando se anticipa una inundación.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Las autoridades locales tienen planes de emergencia para responder a las inundaciones que incluyen la evacuación de áreas en riesgo, la provisión de refugio y la coordinación con servicios de emergencia.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Las áreas de marisma en The Fens están protegidas por ley lo que limita el desarrollo y la construcción en estas áreas.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La educación pública promueve la conciencia sobre los riesgos de inundación y la importancia de la gestión de humedales para prevenir inundaciones en The Fens.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-42",
+    "lang": "es",
+    "question": "¿Cuándo dejó Nick Hodgson los Kaiser Chiefs?",
+    "answer": "Nick Hodgson dejó los Kaiser Chiefs en 2019 para centrarse en su carrera como productor y músico solista.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Nick Hodgson dejó los Kaiser Chiefs en 2019",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nick Hodgson se centró en su carrera como productor después de dejar los Kaiser Chiefs",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nick Hodgson se centró en su carrera como músico solista después de dejar los Kaiser Chiefs",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-136",
+    "lang": "es",
+    "question": "¿Quién fue el comandante de las fuerzas británicas durante la Batalla de Long Island y cuál fue su estrategia principal en el enfrentamiento?",
+    "answer": "El comandante de las fuerzas británicas durante la Batalla de Long Island fue el General William Howe. Su estrategia principal en el enfrentamiento fue intentar derrotar al Ejército Continental de George Washington y capturar a su ejército. Howe planeaba hacer esto atacando el ejército de Washington en sus posiciones en Long Island, Nueva York. Sin embargo, las fuerzas de Howe fueron superadas en número por el Ejército Continental, y a pesar de ganar la batalla, no pudieron capturar a las fuerzas de Washington.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "El comandante de las fuerzas británicas durante la Batalla de Long Island fue el General William Howe.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La estrategia principal de William Howe en el enfrentamiento fue intentar derrotar al Ejército Continental de George Washington y capturar a su ejército.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Howe planeaba hacer esto atacando el ejército de Washington en sus posiciones en Long Island, Nueva York.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Las fuerzas de Howe fueron superadas en número por el Ejército Continental.",
+        "type": "Relational"
+      },
+      {
+        "claim": "A pesar de ganar la batalla, las fuerzas de Howe no pudieron capturar a las fuerzas de Washington.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-58",
+    "lang": "es",
+    "question": "¿ Quién descubrió el asteroide (661) Clelia?",
+    "answer": "El asteroide (661) Clelia fue descubierto el 22 de marzo de 1908 por el astrónomo italiano Luigi Carnera en Heidelberg, Alemania.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "El asteroide (661) Clelia fue descubierto el 22 de marzo de 1908",
+        "type": "External"
+      },
+      {
+        "claim": "Luigi Carnera es un astrónomo italiano",
+        "type": "External"
+      },
+      {
+        "claim": "Luigi Carnera descubrió el asteroide (661) Clelia en Heidelberg, Alemania",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-78",
+    "lang": "es",
+    "question": "¿En dónde está ubicado Speichersdorf?",
+    "answer": "Speichersdorf está ubicado en Alemania, específicamente en el estado de Baden-Württemberg. Se encuentra cerca de la ciudad de Stuttgart.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Speichersdorf está ubicado en Alemania.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Speichersdorf está ubicado en el estado de Baden-Württemberg.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Speichersdorf se encuentra cerca de la ciudad de Stuttgart.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-47",
+    "lang": "es",
+    "question": "¿Cuál es la temperatura de ebullición del líquido de frenos DOT 4?",
+    "answer": "El líquido de frenos DOT 4 es un líquido de frenos de alto rendimiento que se utiliza comúnmente en sistemas de frenos de automóviles. Tiene una temperatura de ebullición de aproximadamente 312°C (594°F).",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "El líquido de frenos DOT 4 es un líquido de frenos de alto rendimiento",
+        "type": "External"
+      },
+      {
+        "claim": "El líquido de frenos DOT 4 se utiliza comúnmente en sistemas de frenos de automóviles",
+        "type": "External"
+      },
+      {
+        "claim": "La temperatura de ebullición del líquido de frenos DOT 4 es aproximadamente 312°C",
+        "type": "External"
+      },
+      {
+        "claim": "La temperatura de ebullición del líquido de frenos DOT 4 es aproximadamente 594°F",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-123",
+    "lang": "es",
+    "question": "¿Cuál es el principal propósito del proyecto Folding@home?",
+    "answer": "El principal objetivo del proyecto Folding@home es realizar simulaciones científicas para entender mejor los procesos biológicos complejos y los mecanismos de enfermedades. Al aprovechar el poder de procesos de computación distribuidos, Folding@home permite a los investigadores simular el plegamiento de proteínas y otras interacciones moleculares, lo que puede ayudar a identificar posibles objetivos terapéuticos y desarrollar nuevos tratamientos para diversas enfermedades, incluyendo el cáncer, el Alzheimer y el Parkinson.",
+    "n_atoms": 11,
+    "atoms": [
+      {
+        "claim": "El principal objetivo del proyecto Folding@home es realizar simulaciones científicas",
+        "type": "External"
+      },
+      {
+        "claim": "Folding@home busca entender mejor los procesos biológicos complejos",
+        "type": "External"
+      },
+      {
+        "claim": "Folding@home busca comprender los mecanismos de enfermedades",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Folding@home aprovecha el poder de la computación distribuida",
+        "type": "External"
+      },
+      {
+        "claim": "Folding@home permite a los investigadores simular el plegamiento de proteínas",
+        "type": "Relational"
+      },
+      {
+        "claim": "Folding@home permite a los investigadores simular otras interacciones moleculares",
+        "type": "Relational"
+      },
+      {
+        "claim": "Las simulaciones de Folding@home pueden ayudar a identificar posibles objetivos terapéuticos",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Las simulaciones de Folding@home pueden ayudar en el desarrollo de nuevos tratamientos para enfermedades",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Folding@home puede contribuir al desarrollo de tratamientos para el cáncer",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Folding@home puede contribuir al desarrollo de tratamientos para el Alzheimer",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Folding@home puede contribuir al desarrollo de tratamientos para el Parkinson",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-111",
+    "lang": "es",
+    "question": "¿Desde qué siglo se tienen registros de la existencia de Möglingen, situado en la actual Alemania?",
+    "answer": "Möglingen es un municipio ubicado en el estado de Baden-Wurtemberg, Alemania. Los registros de la existencia de Möglingen se remontan al siglo VIII.\n\nLa primera mención escrita de Möglingen se encuentra en un documento del año 794, en el que se menciona a un lugar llamado \"Mugilinga\" en un diploma del rey Carlomano I, duque de Baviera. Sin embargo, es probable que el lugar haya existido anteriormente, ya que se han encontrado restos arqueológicos que datan de la época romana.\n\nDurante la Edad Media, Möglingen fue un importante centro comercial y religioso en el sur de Alemania. En el siglo XIII, se construyó la iglesia de San Miguel, que es uno de los edificios más antiguos y significativos del lugar.\n\nA lo largo de la historia, Möglingen ha cambiado de manos varias veces, pasando por la propiedad de diferentes nobles y familiares, hasta que en el siglo XIX se convirtió en un municipio independiente.",
+    "n_atoms": 11,
+    "atoms": [
+      {
+        "claim": "Möglingen es un municipio ubicado en el estado de Baden-Wurtemberg, Alemania.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Los registros de la existencia de Möglingen se remontan al siglo VIII.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La primera mención escrita de Möglingen se encuentra en un documento del año 794.",
+        "type": "External"
+      },
+      {
+        "claim": "En el documento del año 794 se menciona a un lugar llamado \"Mugilinga\".",
+        "type": "Relational"
+      },
+      {
+        "claim": "El documento del año 794 es un diploma del rey Carlomano I, duque de Baviera.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Se han encontrado restos arqueológicos que datan de la época romana en Möglingen.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Durante la Edad Media, Möglingen fue un importante centro comercial y religioso en el sur de Alemania.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "En el siglo XIII se construyó la iglesia de San Miguel en Möglingen.",
+        "type": "External"
+      },
+      {
+        "claim": "La iglesia de San Miguel es uno de los edificios más antiguos y significativos de Möglingen.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "A lo largo de la historia, Möglingen ha cambiado de manos varias veces.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "En el siglo XIX se convirtió en un municipio independiente.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-10",
+    "lang": "es",
+    "question": "¿Cómo se llama la vocalista del grupo surcoreano femenino Mamamoo?",
+    "answer": "El nombre de la vocalista principal del grupo femenino surcoreano Mamamoo es Lee Sol-bi, también conocida como Solar.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "El nombre de la vocalista principal del grupo femenino surcoreano Mamamoo es Lee Sol-bi",
+        "type": "Relational"
+      },
+      {
+        "claim": "Lee Sol-bi es conocida también como Solar",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-69",
+    "lang": "es",
+    "question": "¿Qué editorial fue la encargada de ditribuir la edición es Español de la novela \"Infierno\" de Dan Brown?",
+    "answer": "La editorial que se encargó de distribuir la edición en español de la novela \"Infierno\" (título original en inglés: \"The Lost Symbol\") de Dan Brown fue Plaza & Janés. La novela fue publicada en español en septiembre de 2009.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "La editorial que se encargó de distribuir la edición en español de la novela 'Infierno' (título original en inglés: 'The Lost Symbol') de Dan Brown fue Plaza & Janés.",
+        "type": "Relational"
+      },
+      {
+        "claim": "La novela fue publicada en español en septiembre de 2009.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-146",
+    "lang": "es",
+    "question": "¿En cuántas edicioned de los juegos olímpicos ha participado Cabo Verde?",
+    "answer": "Cabo Verde ha participado en 8 ediciones de los Juegos Olímpicos hasta el año 2021. La primera vez fue en 1976 en Montreal, Canadá.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Cabo Verde ha participado en 8 ediciones de los Juegos Olímpicos",
+        "type": "External"
+      },
+      {
+        "claim": "La primera participación de Cabo Verde en los Juegos Olímpicos fue en 1976",
+        "type": "Relational"
+      },
+      {
+        "claim": "La primera participación de Cabo Verde en los Juegos Olímpicos ocurrió en Montreal, Canadá",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-es-116",
+    "lang": "es",
+    "question": "¿De qué color es el moho Fuligo septica?",
+    "answer": "El moho Fuligo septica, también conocido como \"moho de la muerte\" o \"moho de la lluvia\", es un tipo de moho que puede presentar diferentes tonos de color según su edad y condiciones de crecimiento.\n\nEn general, el moho Fuligo septica puede ser de color:\n\n* Verde oscuro o marrón-verde cuando está en estadio de crecimiento activo.\n* Marrón o marrón-rojizo cuando está en estadio de madurez.\n* Negro o parduzco cuando está en estadio de descomposición.\n\nEs importante destacar que el color del moho puede variar según la especie y la condición en que se encuentre, por lo que no todos los ejemplares de Fuligo septica tienen el mismo color.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "El moho Fuligo septica es también conocido como \"moho de la muerte\" o \"moho de la lluvia\".",
+        "type": "External"
+      },
+      {
+        "claim": "El moho Fuligo septica puede presentar diferentes tonos de color según su edad y condiciones de crecimiento.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "El moho Fuligo septica puede ser de color verde oscuro o marrón-verde cuando está en estadio de crecimiento activo.",
+        "type": "External"
+      },
+      {
+        "claim": "El moho Fuligo septica puede ser de color marrón o marrón-rojizo cuando está en estadio de madurez.",
+        "type": "External"
+      },
+      {
+        "claim": "El moho Fuligo septica puede ser de color negro o parduzco cuando está en estadio de descomposición.",
+        "type": "External"
+      },
+      {
+        "claim": "El color del moho Fuligo septica puede variar según la especie y la condición en que se encuentre.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-38",
+    "lang": "cs",
+    "question": "Který zábavný a soutěžní televizní pořad z produkce TV Nova moderoval herec Petr Rychlý?",
+    "answer": "Petr Rychlý moderoval televizní pořad \"Na plovárně s...\".",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "Petr Rychlý moderoval televizní pořad \"Na plovárně s...\".",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-23",
+    "lang": "cs",
+    "question": "Které město v Čechách bylo vybudováno jako bašta husitů v roce 1420?",
+    "answer": "Tábor, město v jižních Čechách, bylo založeno husity v roce 1420 jako bašta proti katolickému králi Zikmundu Lucemburskému. Bylo to jedno z nejvýznamnějších měst husitského hnutí.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Tábor bylo založeno v roce 1420.",
+        "type": "External"
+      },
+      {
+        "claim": "Tábor bylo založeno husity.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tábor leží v jižních Čechách.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tábor bylo vybudováno jako bašta proti katolickému králi Zikmundu Lucemburskému.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tábor bylo jedno z nejvýznamnějších měst husitského hnutí.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-65",
+    "lang": "cs",
+    "question": "Jak se jmenuje český herec, který by v letech 2017-2018 ministrem zahraničních věcí ČR?",
+    "answer": "V letech 2017-2018 ministrem zahraničních věcí ČR nebyl žádný český herec. Tomáš Petříček, který tuto funkci zastával, je politik a diplomat, neherec.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "V letech 2017-2018 ministrem zahraničních věcí ČR nebyl žádný český herec.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tomáš Petříček je politik a diplomat.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-14",
+    "lang": "cs",
+    "question": "Na jaký nástroj hraje Jim Čert?",
+    "answer": "Jim Čert, český hudebník a člen skupiny Kabát, hraje na kytaru.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Jim Čert je český hudebník.",
+        "type": "External"
+      },
+      {
+        "claim": "Jim Čert je členem skupiny Kabát.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Jim Čert hraje na kytaru.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-6",
+    "lang": "cs",
+    "question": "Kým byl podle legendy zavražděn sv. Václav?",
+    "answer": "Podle legendy byl svatý Václav zavražděn roku 935 svým synem Boleslavem I. na Starém Městě pražském. Tento čin je považován za jeden z největších hříchů v české historii.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Podle legendy byl svatý Václav zavražděn roku 935.",
+        "type": "External"
+      },
+      {
+        "claim": "Svatý Václav byl zavražděn svým synem Boleslavem I.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Zločin zavržení sv. Václava na Starém Městě pražském je považován za jeden z největších hříchů v české historii.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-55",
+    "lang": "cs",
+    "question": "Kolik fakult měla původní pražská univerzita z roku 1348?",
+    "answer": "Původní Pražská univerzita z roku 1348 měla čtyři fakulty: Filozofickou, Právnickou, Lékařskou a Teologickou. Tyto fakulty byly základem vzdělávání a vědecké práce na univerzitě po celá staletí.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Původní Pražská univerzita z roku 1348 měla čtyři fakulty.",
+        "type": "External"
+      },
+      {
+        "claim": "Filozofická fakulta byla součástí původní pražské univerzity z roku 1348.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Právnická fakulta byla součástí původní pražské univerzity z roku 1348.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Lékařská fakulta byla součástí původní pražské univerzity z roku 1348.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Teologická fakulta byla součástí původní pražské univerzity z roku 1348.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-29",
+    "lang": "cs",
+    "question": "Jak se jmenuje český skibobista, který drží dvanáct titulů mistra světa?",
+    "answer": "Český skibobista, který drží dvanáct titulů mistra světa, se jmenuje Roman Koucky. Je to jeden z nejúspěšnějších skibobistů v historii tohoto sportu. Získal své tituly v letech 1992–2012 a je také držitelem rekordu v počtu zlatých medailí z mistrovství světa v alpském skibobu.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Český skibobista se jmenuje Roman Koucky.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Roman Koucky drží dvanáct titulů mistra světa.",
+        "type": "External"
+      },
+      {
+        "claim": "Roman Koucky je jedním z nejúspěšnějších skibobistů v historii tohoto sportu.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Roman Koucky získal své tituly v letech 1992–2012.",
+        "type": "External"
+      },
+      {
+        "claim": "Roman Koucky je držitelem rekordu v počtu zlatých medailí z mistrovství světa v alpském skibobu.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-71",
+    "lang": "cs",
+    "question": "Jak se jmenoval pátý československý prezident, který působil v letech 1953 – 1957?",
+    "answer": "Pátým československým prezidentem, který působil v letech 1953 – 1957, byl Antonín Zápotocký. Byl jmenován po smrti prezidenta Klementa Gottwalda a zastával tuto funkci až do své smrti v roce 1957.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Pátým československým prezidentem, který působil v letech 1953 – 1957, byl Antonín Zápotocký.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Antonín Zápotocký byl jmenován po smrti Klementa Gottwalda.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Antonín Zápotocký zastával funkci prezidenta až do své smrti v roce 1957.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-93",
+    "lang": "cs",
+    "question": "Kdo zahrál postavu Saši Mašlana ve filmu Pelíšky?",
+    "answer": "Ve filmu Pelíšky (1999) zahrál postavu Saši Mašlana Miroslav Donutil.",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "Miroslav Donutil zahrál postavu Saše Mašlana ve filmu Pelíšky.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-59",
+    "lang": "cs",
+    "question": "Kdo je autorem básní Edison a Signál času?",
+    "answer": "Autorem básní Edison a Signál času není znám. Tyto básně byly publikovány anonymně v roce 1927 v časopise The Saturday Evening Post. Je pravděpodobné, že autorem je někdo z redakce časopisu, neboť básně jsou psány v podobě satirických komentářů na aktuální události a osobnosti své doby.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Autorem básní Edison a Signál času není znám.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tyto básně byly publikovány anonymně v roce 1927.",
+        "type": "External"
+      },
+      {
+        "claim": "Tyto básně byly publikovány v časopise The Saturday Evening Post.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Je pravděpodobné, že autorem je někdo z redakce časopisu.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Básně jsou psány v podobě satirických komentářů na aktuální události a osobnosti své doby.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-97",
+    "lang": "cs",
+    "question": "V jakém století bylo město Chomutov dobyto husity?",
+    "answer": "Město Chomutov nebylo dobyto husity. Chomutov byl od počátku husitských válek věrný králi a katolické církvi, a proto nebyl nikdy dobyt husity. V roce 1421 byl Chomutov dokonce jedním z center protihusitské obrany a jeho obyvatelé se zúčastnili bojů proti husitům v bitvě u Ústí nad Labem.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Město Chomutov nebylo dobyto husity.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Chomutov byl od počátku husitských válek věrný králi a katolické církvi.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Chomutov nebyl nikdy dobyt husity.",
+        "type": "Relational"
+      },
+      {
+        "claim": "V roce 1421 byl Chomutov jedním z center protihusitské obrany.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Obyvatelé Chomutova se zúčastnili bojů proti husitům v bitvě u Ústí nad Labem.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-48",
+    "lang": "cs",
+    "question": "Čí pohřeb předcházel uzavření českých vysokých škol 17. listopadu 1939?",
+    "answer": "Ne, pohřeb prezidenta Edvarda Beneše se konal 16. listopadu 1939, tedy den před uzavřením českých vysokých škol. Tento událostí se 17. listopadu 1939 věnovala řada českých vysokých škol, kdy byly uzavřeny jako protest proti zabití prezidenta Beneše.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "Ne, pohřeb prezidenta Edvarda Beneše se konal 16. listopadu 1939.",
+        "type": "External"
+      },
+      {
+        "claim": "Tento událostí se 17. listopadu 1939 věnovala řada českých vysokých škol.",
+        "type": "External"
+      },
+      {
+        "claim": "České vysoké školy byly uzavřeny jako protest proti zabití prezidenta Beneše.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-68",
+    "lang": "cs",
+    "question": "Jak se jmenuje film Ondřeje Trojana z roku 2010, který vypráví o životě party spolužáků Petra, Popelky, Aleše a Míti během normalizace v letech 1973–1977?",
+    "answer": "Film, který vypráví o životě party spolužáků Petra, Popelky, Aleše a Míti během normalizace v letech 1973–1977 a jehož režisérem je Ondřej Trojan, se jmenuje \"Ironie generace\" (v originále \"Ironie fatality\"). Premiéru měl v roce 2010.",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "Film vypráví o životě party spolužáků Petra, Popelky, Aleše a Míti.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Životy se odehrávají během normalizace v letech 1973–1977.",
+        "type": "External"
+      },
+      {
+        "claim": "Režisérem filmu je Ondřej Trojan.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Film se jmenuje \"Ironie generace\" (v originále \"Ironie fatality\").",
+        "type": "Relational"
+      },
+      {
+        "claim": "Premiéru měl film v roce 2010.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-60",
+    "lang": "cs",
+    "question": "Jak se jmenuje československý animovaný seriál, který pojednává o příhodách přerostlého mluvícího psa Fíka a holčičce Áje?",
+    "answer": "Tento československý animovaný seriál se jmenuje \"Fík a Aja\". Vyšel v roce 1976 a stal se velmi populární, především díky svému humoru a zajímavým příhodám. Hlavní postavy, Fík a Aja, se setkávají s různými postavami a dožíváji se různých dobrodružství. Seriál je dodnes oblíbený mezi dětmi i dospělými.",
+    "n_atoms": 12,
+    "atoms": [
+      {
+        "claim": "Tento československý animovaný seriál se jmenuje \"Fík a Aja\".",
+        "type": "Relational"
+      },
+      {
+        "claim": "Vyšel v roce 1976.",
+        "type": "External"
+      },
+      {
+        "claim": "Stal se velmi populární.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Díky svému humoru.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Díky zajímavým příhodám.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Hlavní postavy jsou Fík a Aja.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Fík je mluvící pes.",
+        "type": "External"
+      },
+      {
+        "claim": "Aja je holčička.",
+        "type": "External"
+      },
+      {
+        "claim": "Postavy se setkávají s různými postavami.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Postavy dožívají se různých dobrodružství.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Seriál je dodnes oblíbený mezi dětmi.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Seriál je oblíbený i mezi dospělými.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-88",
+    "lang": "cs",
+    "question": "Jak se nazývá nejstarší pražské nádraží, které se nachází na Hybernské ulici?",
+    "answer": "Nejstarší pražské nádraží, které se nachází na Hybernské ulici, se nazývá nádraží Praha-Hybernská. Bývá také označováno jako Staré nádraží nebo původní hlavní nádraží Prahy. Otevřeno bylo roku 1841 a bylo hlavním nádražím Prahy až do roku 1871, kdy bylo nahrazeno nádražím Praha hlavní nádraží. Dnes je nádraží Praha-Hybernská využíváno především pro regionální a meziměstské spoje.",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "Nejstarší pražské nádraží, které se nachází na Hybernské ulici, se nazývá nádraží Praha-Hybernská.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nádraží Praha-Hybernská bývá také označováno jako Staré nádraží.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nádraží Praha-Hybernská bývá také označováno jako původní hlavní nádraží Prahy.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nádraží Praha-Hybernská bylo otevřeno roku 1841.",
+        "type": "External"
+      },
+      {
+        "claim": "Nádraží Praha-Hybernská bylo hlavním nádražím Prahy až do roku 1871.",
+        "type": "Relational"
+      },
+      {
+        "claim": "V roce 1871 bylo nádraží Praha-Hybernská nahrazeno nádražím Praha hlavní nádraží.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Dnes je nádraží Praha-Hybernská využíváno především pro regionální a meziměstské spoje.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-80",
+    "lang": "cs",
+    "question": "Kdo je David Černý?",
+    "answer": "David Černý je český sochař, umělec a architekt, známý svými kontroverzními a často provokativními díly. Narodil se v roce 1967 v Praze, Československu.\n\nČerný je autor mnoha veřejných uměleckých děl, které často kritizují politiku, společnost a kulturní hodnoty. Jeho práce často kombinuje prvky sochařství, malířství, instalace a performance.\n\n Některé z jeho nejznámějších děl zahrnují:\n\n* \"Funký Dům\" (1991) - socha, která byla původně umístěna na střeše domu v Praze, ale byla později odstraněna kvůli kontroverznímu obsahu.\n* \"Křižáci\" (1994) - socha, která zobrazuje křižáky jako zvířata, umístěná v Praze.\n* \"Ente\" (1995) - socha, která zobrazuje ente (krokodýla) s černým křížem na hlavě, umístěná v Praze.\n* \"Pomník Gottwaldovi\" (2008) - socha, která zobrazuje Klementa Gottwalda, prvního československého prezidenta, jakožto \"žába\", umístěná v Praze.\n* \"Dva muži\" (2011) - socha, která zobrazuje dva muže, kteří se líbají, umístěná v Praze.\n\nČernýovy práce často vyvolávají kontroverze a diskuse o hranicích umění a politiky. Je však také respektován za svou originalitu a schopnost provokovat veřejnost k diskusi o důležitých tématách.",
+    "n_atoms": 31,
+    "atoms": [
+      {
+        "claim": "David Černý je český sochař.",
+        "type": "External"
+      },
+      {
+        "claim": "David Černý je umělec.",
+        "type": "External"
+      },
+      {
+        "claim": "David Černý je architekt.",
+        "type": "External"
+      },
+      {
+        "claim": "David Černý je známý svými kontroverzními a často provokativními díly.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "David Černý se narodil v roce 1967.",
+        "type": "External"
+      },
+      {
+        "claim": "David Černý se narodil v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "David Černý se narodil v Československu.",
+        "type": "Relational"
+      },
+      {
+        "claim": "David Černý je autor mnoha veřejných uměleckých děl.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Černýův práce často kritizují politiku.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Černýův práce často kritizují společnost.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Černýův práce často kritizují kulturní hodnoty.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Černýův práce často kombinuje prvky sochařství, malířství, instalace a performance.",
+        "type": "External"
+      },
+      {
+        "claim": "Funký Dům je socha autorství David Černého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Funký Dům byl původně umístěn na střeše domu v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Funký Dům byl později odstraněn kvůli kontroverznímu obsahu.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Křižáci je socha autorství David Černého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Křižáci zobrazují křižáky jako zvířata.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Křižáci byly umístěny v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Ente je socha autorství David Černého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Ente zobrazuje entu (krokodýla) s černým křížem na hlavě.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Ente bylo umístěno v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Pomník Gottwaldovi je socha autorství David Černého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Pomník Gottwaldovi zobrazuje Klementa Gottwalda jako žábu.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Pomník Gottwaldovi byl umístěn v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Dva muži je socha autorství David Černého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Dva muži zobrazují dva muže, kteří se líbají.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Dva muži byli umístěni v Praze.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Černýův práce často vyvolávají kontroverze.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Černýův práce často vyvolávají diskuse o hranicích umění a politiky.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "David Černý je respektován za svou originalitu.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "David Černý má schopnost provokovat veřejnost k diskusi o důležitých tématách.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-54",
+    "lang": "cs",
+    "question": "Z jakého důvodu podal Petr Nečas v roce 2013 demisi?",
+    "answer": "Petr Nečas podal demisi v roce 2013 hlavně kvůli skandálu s manželkou jeho bývalé ministryně práce Jany Nagyové. Skandál zahrnoval podezřelé kontakty mezi Nečasem a Nagyovou a dalšími osobami, včetně podnikatele Aloise Kouckého. Skandál vyvolal velkou kritiku a nátlak na Nečase, aby rezignoval. Nečas rezignoval 17. června 2013.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "Petr Nečas podal demisi v roce 2013 kvůli skandálu s manželkou jeho bývalé ministryně práce Jany Nagyové.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Skandál zahrnoval podezřelé kontakty mezi Nečasem a Nagyovou.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Skandál zahrnoval podezřelé kontakty včetně podnikatele Aloise Kouckého.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Skandál vyvolal velkou kritiku na Nečase.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Skandál vyvolal nátlak na Nečase, aby rezignoval.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nečas rezignoval 17. června 2013.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-91",
+    "lang": "cs",
+    "question": "Jak se nazývá nejstarší česká kronika?",
+    "answer": "Nejstarší česká kronika se nazývá Kronika Bořivoje II. (nebo také Kronika Kosmova). Byla napsána v letech 1282-1283 a jejím autorem je Kosmas, český historik, teolog a filozof. Kronika popisuje dějiny Čech od počátku světa po rok 1278.",
+    "n_atoms": 9,
+    "atoms": [
+      {
+        "claim": "Nejstarší česká kronika se nazývá Kronika Bořivoje II.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Kronika Bořivoje II. se nazývá také Kronika Kosmova",
+        "type": "Relational"
+      },
+      {
+        "claim": "Byla napsána v letech 1282-1283",
+        "type": "External"
+      },
+      {
+        "claim": "Jejím autorem je Kosmas",
+        "type": "Relational"
+      },
+      {
+        "claim": "Kosmas byl český historik",
+        "type": "Relational"
+      },
+      {
+        "claim": "Kosmas byl teolog",
+        "type": "External"
+      },
+      {
+        "claim": "Kosmas byl filozof",
+        "type": "External"
+      },
+      {
+        "claim": "Kronika popisuje dějiny Čech od počátku světa",
+        "type": "Relational"
+      },
+      {
+        "claim": "Popisu kroniky sahají až do roku 1278",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-24",
+    "lang": "cs",
+    "question": "Která dvojice plážových volejbalistů se stala v roce 2023 mistry světa?",
+    "answer": "V roce 2023 se ještě neproběhlo Mistrovství světa v plážovém volejbale, takže ještě není znám ten vítězný pár. Zatímco se v roce 2022 stali mistry světa Alison Cerutti a Álvaro Filho z Brazílie, v roce 2021 to byli Nicolai Lupo a Paolo Nicolai z Itálie.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "V roce 2023 se ještě neproběhlo Mistrovství světa v plážovém volejbale",
+        "type": "External"
+      },
+      {
+        "claim": "Ještě v roce 2023 není znám vítězný pár z Mistrovství světa v plážovém volejbale",
+        "type": "Subjective"
+      },
+      {
+        "claim": "V roce 2022 se stali mistry světa v plážovém volejbale Alison Cerutti a Álvaro Filho",
+        "type": "External"
+      },
+      {
+        "claim": "Alison Cerutti a Álvaro Filho jsou z Brazílie",
+        "type": "Relational"
+      },
+      {
+        "claim": "V roce 2021 byli mistry světa v plážovém volejbale Nicolai Lupo a Paolo Nicolai",
+        "type": "Relational"
+      },
+      {
+        "claim": "Nicolai Lupo a Paolo Nicolai jsou z Itálie",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-cs-7",
+    "lang": "cs",
+    "question": "Jak se jmenuje postava loupežníka z knih, která je spojená s městem Jičínem?",
+    "answer": "Postava loupežníka, která je spojená s městem Jičínem, se jmenuje Václav Hajný, známý jako Václav Hajný z Jičína. Tato postava je hlavní hrdina knihy \"Václav Hajný z Jičína\" od Jaroslava Foglara. Tato kniha je první díl cyklu o Václavu Hajným, který se stal jednou z nejpopulárnějších knižních postav pro mládež v Československu.",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "Postava loupežníka, která je spojená s městem Jičínem, se jmenuje Václav Hajný.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Václav Hajný je známý jako Václav Hajný z Jičína.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Tato postava je hlavní hrdina knihy \"Václav Hajný z Jičína\" od Jaroslava Foglara.",
+        "type": "Relational"
+      },
+      {
+        "claim": "Kniha \"Václav Hajný z Jičína\" je prvním dílem cyklu o Václavu Hajným.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-81",
+    "lang": "zh",
+    "question": "科克大学曾经还有过哪些校名？",
+    "answer": "\n科克的大学在历史上曾经有过几个不同的名字。以下是一些重要的校名称呼：\n\n1. 爱尔兰大学（University of Ireland）：在19世纪，科尔大学是爱尔兰大学的四所创始成员之一。\n2. Queen's University, King' s County（皇后大学，国王郡），这是科尔的大学在其成立之初的名称。这个名称反映了它在科尔斯郡（King'S County）的成立地点。1850年，该大学获得了皇家宪章，并被正式命名为Queen' S University，King 'S county。后来，随着郡的更名，大学也相应地更名为Queen 'sUniversity, Cork（科克尔大学）。 \n3. University of King ' S County：这是在更名的过程中，在某些文献和记录中使用的名称，尽管它不如Queen’s大学那样广为人知。  \n4. National University College, Queen ' s University（国立大学学院，皇后大学的简称）在20世纪初，为了与爱尔兰国立大学的其他学院相区分，该校采用了这个更简洁的称号。   \n5. Royal University：1715年的一份法案将科尔特大学称为皇家大学。然而，这个称号并没有持续很长时间，因为1691年的布雷顿条约结束了都柏林大学的三大学院（Trinity College，University College和Queen ‘s College）以外的大学自治。因此，12月23日，都铎国王授予的皇家特许状被废除，直到10年后，即1357年才恢复。    \n6. Trinity College（三一学院）和University Collge（大学协会）是都德雷尔大学的两个学院在爱尔兰独立后改名的结果。大学被重新命名为University Colle，而三一的学院则被保留为三一大学校。     \n7. College of the Holy and Undivided Trinity（圣而不可分割的三一学院的简称，Trincomalee）这是三一一学院最初在都德的成立时的名称（14世纪）\n8. The University Collegiate School（都大学文学院简称UCD）11世纪时，圣帕特里克在科尔多夫创立了学校，后来成为都大学的基石。      \n9. Collegium Hibernicum（爱尔兰学院）（1） 1 世纪在安特卫普成立，是欧洲最古老的大学之一，后因",
+    "n_atoms": 12,
+    "atoms": [
+      {
+        "claim": "科克的大学在历史上曾经有过几个不同的名字",
+        "type": "External"
+      },
+      {
+        "claim": "科尔大学是爱尔兰大学的四所创始成员之一",
+        "type": "Relational"
+      },
+      {
+        "claim": "Queen's University, King' s County 是科尔的大学在其成立之初的名称",
+        "type": "Relational"
+      },
+      {
+        "claim": "1850年，该大学获得了皇家宪章，并被正式命名为Queen' S University，King 'S county",
+        "type": "External"
+      },
+      {
+        "claim": "随着郡的更名，大学也相应地更名为Queen 'sUniversity, Cork",
+        "type": "Relational"
+      },
+      {
+        "claim": "University of King ' S County 在某些文献和记录中使用过",
+        "type": "Subjective"
+      },
+      {
+        "claim": "National University College, Queen ' s University 是20世纪初该校采用的称号",
+        "type": "Relational"
+      },
+      {
+        "claim": "1715年的一份法案将科尔特大学称为皇家大学",
+        "type": "Relational"
+      },
+      {
+        "claim": "都铎国王授予的皇家特许状在1691年的布雷顿条约后被废除，直到1357年才恢复",
+        "type": "External"
+      },
+      {
+        "claim": "Trinity College 和 University Collge 是都德雷尔大学的两个学院在爱尔兰独立后改名的结果",
+        "type": "Relational"
+      },
+      {
+        "claim": "College of the Holy and Undivided Trinity 是三一一学院最初在都德成立时的名称",
+        "type": "Relational"
+      },
+      {
+        "claim": "圣帕特里克在科尔多夫创立了学校，后来成为都大学的基石",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-85",
+    "lang": "zh",
+    "question": "小竹鼠分布于哪些国家和地区？",
+    "answer": "小鼠属（学名：Rhizomys）是竹科竹属下的一种哺乳动物，分布于中国、越南、老挝、缅甸、泰国、马来西亚、印度尼西亚、菲律宾、新加坡、斯里兰卡、印度、尼泊尔、不丹、巴基斯坦、阿富汗、伊朗、伊拉克、土耳其、叙利亚、以色列、约旦、沙特阿拉伯、阿曼、也门、埃及、苏丹、埃塞俄比亚、肯尼亚、坦桑尼亚和南非。\n小老鼠属是鼠科中最大的属之一，共有约40种。它们是典型的食草动物。小啮齿动物属包括小田鼠、小沙鼠和小竹林鼠。这些动物在野外和人工饲养条件下都表现出了很好的适应性。",
+    "n_atoms": 30,
+    "atoms": [
+      {
+        "claim": "小竹鼠分布于中国",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于越南",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于老挝",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于缅甸",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于泰国",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于马来西亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于印度尼西亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于菲律宾",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于新加坡",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于斯里兰卡",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于印度",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于尼泊尔",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于不丹",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于巴基斯坦",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于阿富汗",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于伊朗",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于伊拉克",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于土耳其",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于叙利亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于以色列",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于约旦",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于沙特阿拉伯",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于阿曼",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于也门",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于埃及",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于苏丹",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于埃塞俄比亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于肯尼亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于坦桑尼亚",
+        "type": "Relational"
+      },
+      {
+        "claim": "小竹鼠分布于南非",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-89",
+    "lang": "zh",
+    "question": "凹耳胡湍蛙成年蛙生活在什么地方？",
+    "answer": "\n\n成年凹耳朵湍蟾蛙通常生活在溪流、沼泽和潮湿的森林环境中。它们喜欢在清澈的水流中游泳，并在水边植被上觅食昆虫和其他小动物。在繁殖季节，雄性蛙会在水边的陆地上发出鸣叫声，吸引雌性青蛙交配。",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "成年凹耳朵湍蟾蛙通常生活在溪流中",
+        "type": "External"
+      },
+      {
+        "claim": "成年凹耳朵湍蟾蛙通常生活在沼泽中",
+        "type": "External"
+      },
+      {
+        "claim": "成年凹耳朵湍蟾蛙通常生活在潮湿的森林环境中",
+        "type": "External"
+      },
+      {
+        "claim": "成年凹耳朵湍蟾蛙喜欢在清澈的水流中游泳",
+        "type": "Subjective"
+      },
+      {
+        "claim": "成年凹耳朵湍蟾蛙在水边植被上觅食昆虫和其他小动物",
+        "type": "External"
+      },
+      {
+        "claim": "雄性凹耳朵湍蟾蛙会在繁殖季节在水边的陆地上发出鸣叫声",
+        "type": "Relational"
+      },
+      {
+        "claim": "雄性凹耳朵湍蟾蛙通过鸣叫吸引雌性青蛙交配",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-60",
+    "lang": "zh",
+    "question": "新缬草属分布于哪些地区？",
+    "answer": " 新缬草原产于欧洲，特别是地中海沿岸地区，包括西班牙、葡萄牙、法国南部、意大利和希腊等地。它在这些地区的自然环境中广泛分布，并且在园艺上也被引种到其他地区。由于其美丽的花朵和耐旱的特性，新 Valerie 在全球各地都有一定的栽培和观赏价值。",
+    "n_atoms": 12,
+    "atoms": [
+      {
+        "claim": "新缬草原产于欧洲",
+        "type": "Relational"
+      },
+      {
+        "claim": "新缬草特别分布在地中海沿岸地区",
+        "type": "Relational"
+      },
+      {
+        "claim": "西班牙是新缬草分布地之一",
+        "type": "External"
+      },
+      {
+        "claim": "葡萄牙是新缬草分布地之一",
+        "type": "External"
+      },
+      {
+        "claim": "法国南部是新缬草分布地之一",
+        "type": "Relational"
+      },
+      {
+        "claim": "意大利是新缬草分布地之一",
+        "type": "Relational"
+      },
+      {
+        "claim": "希腊是新缬草分布地之一",
+        "type": "External"
+      },
+      {
+        "claim": "新缬草在这些地区的自然环境中广泛分布",
+        "type": "External"
+      },
+      {
+        "claim": "新缬草被引种到其他地区用于园艺",
+        "type": "Relational"
+      },
+      {
+        "claim": "新缬草具有美丽的花朵",
+        "type": "Subjective"
+      },
+      {
+        "claim": "新缬草具有耐旱的特性",
+        "type": "External"
+      },
+      {
+        "claim": "新缬草在全球各地都有一定的栽培和观赏价值",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-76",
+    "lang": "zh",
+    "question": "国际奇连蓝是如何开发合成的？",
+    "answer": "\n奇幻连环蓝（Chimera Chain Blue）是一种合成材料，它是由日本化学公司东丽（Toray）开发的。这种材料是由三种不同的纤维材料混合而成的，包括碳纤维、玻璃纤维和凯夫拉纤维（Kevlar）。\n\n碳纤 维提供了高强度和高模量，玻璃纤\n维则提供了耐热性和耐腐蚀性，而凯 夫 拉 纤  维 则 提供了 高 抗 刺 能力和 耐 燃 性。这 三种 材 料 的 混 合 使 奇 幻 连 环 蓝 具 有 了 比 较 全 面的 物 理 特 性和 优 越 的工 艺 能 力。东 丽 通 过 独 立 的研 发 和 工\n艺创新，成功地开发了这种合成材\n料。具体来说，东丽的研发团队采用了\n一种特殊的混合和加工技术，将这三种\n纤维以精确的比例和排列方式混合，\n然后通过热处理和化学处理等工艺步骤\n将其转化为最终的奇幻想链蓝材料。该\n材料具有高强度的同时，还具有轻质\n和耐用的特点，因此被广泛应用于\n航空航天、汽车、体育用品和建筑\n等领域。（以上内容来自百度百科）\n东瀛的化学家们通过将碳、凯芙拉、玻纤混合在一起，通过特殊的工艺处理，开发出了奇链连。它的特点是强度高、重量轻、耐高温、抗腐蚀、防切割、阻燃等，非常适合制作高速飞行器、赛车、运动器材等需要高刚性和轻量化的产品。奇想天开连的开发成功，体现了东力的技术创新和研发实力。(以上内容为百度文库摘录)\n国际上，奇连锁蓝是由东力公司开发的，是一种高性能复合材料。它由碳素纤维，凯福拉（凯纶）纤维以及玻璃钢纤维混合而成，具有极高的强度和模度，良好的耐温性、防腐性以及抗切割性等特点。在航空、航天领域，这种复合材料被用于制造飞机和火箭的机身、发动机部件等。此外，在汽车工业中，由于奇串联蓝具有良好的轻量化性能，也被用于制作车身、底盘、引擎盖等部件。总之，",
+    "n_atoms": 19,
+    "atoms": [
+      {
+        "claim": "奇幻连环蓝是由日本化学公司东丽开发的",
+        "type": "Relational"
+      },
+      {
+        "claim": "这种材料由碳纤维、玻璃纤维和凯夫拉纤维混合而成",
+        "type": "External"
+      },
+      {
+        "claim": "碳纤维提供了高强度和高模量",
+        "type": "External"
+      },
+      {
+        "claim": "玻璃纤维提供了耐热性和耐腐蚀性",
+        "type": "External"
+      },
+      {
+        "claim": "凯夫拉纤维提供了高抗刺能力和耐燃性",
+        "type": "External"
+      },
+      {
+        "claim": "这三种材料的混合使奇幻连环蓝具有全面的物理特性和优越的工艺能力",
+        "type": "External"
+      },
+      {
+        "claim": "东丽通过独立的研发和工艺创新开发了这种合成材料",
+        "type": "External"
+      },
+      {
+        "claim": "东丽研发团队采用了特殊的混合和加工技术将三种纤维以精确的比例和排列方式混合",
+        "type": "External"
+      },
+      {
+        "claim": "然后通过热处理和化学处理等工艺步骤将其转化为最终的奇幻连环蓝材料",
+        "type": "External"
+      },
+      {
+        "claim": "该材料具有高强度、轻质和耐用的特点",
+        "type": "External"
+      },
+      {
+        "claim": "奇幻想链蓝被广泛应用于航空航天领域",
+        "type": "Subjective"
+      },
+      {
+        "claim": "奇幻想链蓝也被用于汽车工业制造车身、底盘、引擎盖等部件",
+        "type": "External"
+      },
+      {
+        "claim": "国际上，奇连锁蓝是由东力公司开发的",
+        "type": "Relational"
+      },
+      {
+        "claim": "奇连锁蓝是一种高性能复合材料",
+        "type": "External"
+      },
+      {
+        "claim": "奇连锁蓝由碳素纤维、凯福拉（凯纶）纤维以及玻璃钢纤维混合而成",
+        "type": "External"
+      },
+      {
+        "claim": "这种复合材料具有极高的强度和模度",
+        "type": "External"
+      },
+      {
+        "claim": "这种复合材料具有良好的耐温性、防腐性和抗切割性",
+        "type": "External"
+      },
+      {
+        "claim": "在航空领域，这种复合材料被用于制造飞机的机身和发动机部件",
+        "type": "External"
+      },
+      {
+        "claim": "在航天领域，这种复合材料也被用于制造火箭的机身和发动机部件",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-114",
+    "lang": "zh",
+    "question": "与法国拉巴尔姆接壤的市镇有哪些？",
+    "answer": "\n拉布雷斯特（Labastide-sur-Orge）位于法国奥弗涅-罗纳-阿尔卑斯大区的多尔多涅省，它与以下市镇长相接：\n\n1. 拉博尔（La Baume-l'Abbé）\n2. 图尔诺（Toulnoz）和拉图尔-德-拉-瓦尔戈（Lartoux-de-la-Vallée-d'Orgue），这两个市镇的边界相交于拉布拉尔地区。\n3. 小拉尔马（Petit-Larrault）。请注意，小拉爾馬（小字拉拉）是拉普拉斯（拉帕尔馬）的另一个名称，但在这里，我们使用小拉的正确拼写。拉伯尔和图爾諾之间的边界穿过拉瓦爾戈地区，因此小拉克馬是正确的名称。然而，在法国行政地图上，拉克馬通常被标记为拉馬尔。因此，正确的边界接邻市是：拉布尔雷斯（与拉马尔接界）、拉波尔雷（ La Paluerne）和小拉姆（ Petit Larraum）或小克马。这些市鎮的边界共同构成了拉堡斯特的南部边界。 \n4. 大拉马尔（Grand Larre-Dumoulin）和大拉鲁（Gros-La-Rouge-Motte）市，这些边界位于拉布斯雷特市的西部边界上。大拉玛尔和大拉克鲁之间的接边线穿过多尔多涅河。此外，大拉克魯的北部边界与小克拉鲁接合，而小卡鲁位于多爾多內河的北岸。小卡拉鲁的东部边界则与图卢瓦（Thouars）接接，后者是多洛内河的一个小镇。 图卢阿的西部与圣埃蒂安接边界，东部与奥克塔夫·勒·佩尔西（Octave-le-Pérouer）相邻，北部与阿莱尔·德·拉·弗雷尔德（Allier-des-Landes）相连，南部与多罗内省的圣阿芒（Saint-Amand）相望。圣安曼的西边是圣克劳德德拉弗朗什（Commune of Saint-Claude-du-Français）",
+    "n_atoms": 13,
+    "atoms": [
+      {
+        "claim": "拉布雷斯特位于法国奥弗涅-罗纳-阿尔卑斯大区的多尔多涅省",
+        "type": "Relational"
+      },
+      {
+        "claim": "拉博尔与拉布雷斯特接壤",
+        "type": "Relational"
+      },
+      {
+        "claim": "图尔诺和拉图尔-德-拉-瓦尔戈与拉布雷斯特接壤，边界相交于拉布拉尔地区",
+        "type": "Relational"
+      },
+      {
+        "claim": "小拉尔马（Petit-Larrault）与拉布雷斯特接壤",
+        "type": "Relational"
+      },
+      {
+        "claim": "大拉马尔（Grand Larre-Dumoulin）与拉布雷斯特接壤",
+        "type": "Relational"
+      },
+      {
+        "claim": "大拉鲁（Gros-La-Rouge-Motte）与拉布雷斯特接壤",
+        "type": "Relational"
+      },
+      {
+        "claim": "多尔多涅河穿过大拉玛尔和大拉克鲁之间的边界",
+        "type": "Relational"
+      },
+      {
+        "claim": "小克拉鲁位于多尔多涅河的北岸，北部边界与大拉克魯接合",
+        "type": "Relational"
+      },
+      {
+        "claim": "图卢瓦（Thouars）是多洛内河的一个小镇，西部与圣埃蒂安接界",
+        "type": "Relational"
+      },
+      {
+        "claim": "图卢阿东部与奥克塔夫·勒·佩尔西相邻",
+        "type": "Relational"
+      },
+      {
+        "claim": "图卢阿北部与阿莱尔·德·拉·弗雷尔德相连",
+        "type": "Relational"
+      },
+      {
+        "claim": "图卢阿南部与圣阿芒相望",
+        "type": "Relational"
+      },
+      {
+        "claim": "圣阿芒的西边是圣克劳德德拉弗朗什",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-22",
+    "lang": "zh",
+    "question": "游戏极度恐慌开发和发行公司有哪些？",
+    "answer": "\n《极度恐惧》（F.E.A.R.）是一款由Monolith Productions开发的第一人称射击游戏，于2005年9月13日由Vivendi Universal Games发行。",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "《极度恐惧》是一款由Monolith Productions开发的游戏",
+        "type": "Relational"
+      },
+      {
+        "claim": "《极度恐惧》是第一人称射击类型的游戏",
+        "type": "Relational"
+      },
+      {
+        "claim": "《极度恐惧》于2005年9月13日发行",
+        "type": "External"
+      },
+      {
+        "claim": "《极度恐惧》是由Vivendi Universal Games发行的",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-112",
+    "lang": "zh",
+    "question": "弗吉尼亚大学骑士队有哪些主场体育场？",
+    "answer": "\n弗吉利亚大学的主场体育场是斯科特·D·斯卡格尔顿球场（Scott D. Spooky Bolton Field），位于弗雷德里克斯堡的卡斯特体育场路（Castleton Stadium Drive）。这座体育场于1997年开放，可容纳约50,00",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "弗吉利亚大学的主场体育场是斯科特·D·斯卡格尔顿球场",
+        "type": "Relational"
+      },
+      {
+        "claim": "斯科特·D·斯卡格尔顿球场位于弗雷德里克斯堡的卡斯特体育场路",
+        "type": "Relational"
+      },
+      {
+        "claim": "这座体育场于1997年开放",
+        "type": "External"
+      },
+      {
+        "claim": "这座体育场可容纳约50,0",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-100",
+    "lang": "zh",
+    "question": "莫里茨·福尔茨从事过一些什么事业？",
+    "answer": "莫利茨福尔兹从事过的职业有： 1. 德国陆军军官 2.德国外交官 3.外交部长 4.驻美国大使 5.柏林外交学院院长 6.普鲁士王国首相 7.总理大臣 8.陆军元帅 9.国王顾问 10.首相大臣\n[答案]1、德国外交部 外交大臣（外交部部长） 普鲁斯王国外交事务大臣，普罗斯王国总理，德国总理 驻美大使，柏林外交部院长，外交国务大臣。 陆军总司令，陆军大臣陆军部长，总参谋长，参谋长。\n2、普魯士王國首相\n3、德國外交長官\n4、柏林外事學院院長\n5、外交部長\n6、駐美國大使\n7、首相大長老\n8、陆军總司令\n9、国王顧問\n10、总理大长老",
+    "n_atoms": 28,
+    "atoms": [
+      {
+        "claim": "莫利茨福尔兹是德国陆军军官",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹是德国外交官",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹担任过外交部长",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹曾为驻美国大使",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任柏林外交学院院长",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾担任普鲁士王国首相",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是总理大臣",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹被授予陆军元帅称号",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹是国王顾问",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是首相大臣",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹在德国外交部担任过外交大臣",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾为普鲁士王国外交事务大臣",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任普鲁士王国总理",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任德国总理",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是驻美大使",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是柏林外交部院长",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹担任过外交国务大臣",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹曾为陆军总司令",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾为陆军大臣",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任陆军部长",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹曾为总参谋长",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹是参谋长",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹曾担任普魯士王國首相",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是德國外交長官",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任柏林外事學院院長",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹曾任外交部長",
+        "type": "External"
+      },
+      {
+        "claim": "莫利茨福尔兹是国王顧問",
+        "type": "Relational"
+      },
+      {
+        "claim": "莫利茨福尔兹是总理大长老",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-15",
+    "lang": "zh",
+    "question": "相思子属植物分布于哪些地区？",
+    "answer": " 相思树（学名：Acacia mearnsii）是一种原产于澳大利亚的植物，属于豆科（Fabaceae）的相思念属（Acaciinae）。这种植物在澳大利亚非常常见，特别是在干燥和半干燥的地区，如内陆、沙漠和草原。相思想子树因其美丽的花朵和硬质木材而受到关注，木材常用于家具制作。\n\n然而，由于相想子的种子具有毒性，人们通常不会将其种植在家庭花园中，而是作为观赏植物或在特定环境中进行控制。尽管如此，相念属的其他物种可能在其他地区有分布，但相思考虑到其原产地和自然习性，主要还是在澳洲及其周边地区。",
+    "n_atoms": 11,
+    "atoms": [
+      {
+        "claim": "相思树（学名：Acacia mearnsii）是一种植物",
+        "type": "External"
+      },
+      {
+        "claim": "相思树属于豆科的相思念属",
+        "type": "External"
+      },
+      {
+        "claim": "相思树原产于澳大利亚",
+        "type": "External"
+      },
+      {
+        "claim": "相思树在澳大利亚非常常见",
+        "type": "Subjective"
+      },
+      {
+        "claim": "相思树主要分布在干燥和半干燥地区",
+        "type": "External"
+      },
+      {
+        "claim": "相思树的木材常用于家具制作",
+        "type": "External"
+      },
+      {
+        "claim": "相思树种子具有毒性",
+        "type": "External"
+      },
+      {
+        "claim": "人们通常不会将相思树种植在家庭花园中",
+        "type": "Subjective"
+      },
+      {
+        "claim": "相思树作为观赏植物或在特定环境中进行控制",
+        "type": "Subjective"
+      },
+      {
+        "claim": "相思念属其他物种可能在其他地区有分布",
+        "type": "Subjective"
+      },
+      {
+        "claim": "相思树主要分布在澳洲及其周边地区",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-12",
+    "lang": "zh",
+    "question": "运动员多曼塔斯·萨博尼斯效力过哪些球队？",
+    "answer": " 多曼达斯•萨波尼斯（Domantas Sabonis）是一位立陶宛职业篮球运动员，目前效力于NBA的波特兰开拓者队。他的职业生涯可以分为以下几个阶段：\n\n1. 西班牙联赛（ACB）：萨布尼斯在2013-22年期间效力西班牙甲级联赛的巴塞罗那篮球俱乐部（BC BàsquetBarcelona），在那里他迅速崭露头角。\n\n2. NBA选秀：21岁的萨普尼斯于25号被印第安纳步行者选中，随后在NCAA打球。他在26岁时（28岁生日之前）正式加入步行者的母队印弟安那溜马队，开始了他的Nba生涯。\n\n3. 印度纳那步行着：在溜马上，萨卜尼斯从27-19赛季开始成为首发球员，并在多个赛季中表现出色。\n\n4. 交易至波特兰州：由于伤病和球队重建计划，23岁的他在18-99年被交易到波特兰花蕾队（Portland Trail Blazers），继续他的职业发展。\n\n所以，多米塔纳斯·塞博尼斯效力过的球队包括巴赛罗纳篮球（西班牙）、印地安拿溜馬（NBB）以及波特蘭拓荒者（现役球队）。",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "多曼达斯•萨波尼斯是一位立陶宛职业篮球运动员",
+        "type": "External"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯目前效力于NBA的波特兰开拓者队",
+        "type": "Relational"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯在2013-22年期间效力于西班牙甲级联赛的巴塞罗那篮球俱乐部",
+        "type": "Relational"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯被印第安纳步行者选中",
+        "type": "Relational"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯正式加入印第安纳步行者队开始了他的NBA生涯",
+        "type": "Relational"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯在溜马上从27-19赛季开始成为首发球员",
+        "type": "Relational"
+      },
+      {
+        "claim": "多曼达斯•萨波尼斯被交易到波特兰开拓者队",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-3",
+    "lang": "zh",
+    "question": "请问埃皮拉莱谢讷市镇所属的行政区划是什么？",
+    "answer": "\n埃皮卡莱纳谢恩（Épila）是西班牙阿拉贡自治区萨拉戈萨省的一个市镇。",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "埃皮卡莱纳谢恩是西班牙阿拉贡自治区的一个市镇",
+        "type": "Relational"
+      },
+      {
+        "claim": "埃皮卡莱纳谢恩是萨拉戈萨省的一个市镇",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-69",
+    "lang": "zh",
+    "question": "科尔察自治省在历史上跟法国的关系是什么？",
+    "answer": " 科尔察（Kolch）是古代黑海地区的一个地区，位于今天的格鲁吉亚和土耳其之间。历史上，科尔恰曾被多个文明和帝国统治，包括希腊、罗马、波斯、亚美尼亚和拜占庭等。然而，并没有直接的历史证据表明科尔查自治省政府与法国之间有直接的关系。\n\n科尔契这个名字在古希腊时期被称为科奇斯（Colchis），在罗马时代则被称为科尔奇亚（Corcisia）。这个地区在古代因金羊毛的传说而闻名，但与现代国家的行政划分无关。如果提到的是19世纪或20世纪的某个特定时期，可能需要更具体的背景信息来讨论与法国有关的事件，因为这些时期可能会涉及到殖民地时期或其他形式的国际关系。",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "科尔察是古代黑海地区的一个地区",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-16",
+    "lang": "zh",
+    "question": "奥林匹克运动会佛得角代表团参与的比赛项目有些什么？",
+    "answer": "\n佛德角在历届奥运会上，主要参加的项目包括田径、游泳和足球。在2016年里约奥运会的比赛中，佛徳角代表队共获得了1枚银牌和3枚铜牌，这些奖牌全部来自于田径和游泳两个大项。",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "佛德角主要参加的项目包括田径",
+        "type": "Relational"
+      },
+      {
+        "claim": "佛德角主要参加的项目包括游泳",
+        "type": "Relational"
+      },
+      {
+        "claim": "佛德角主要参加的项目包括足球",
+        "type": "Relational"
+      },
+      {
+        "claim": "在2016年里约奥运会上，佛徳角代表队获得了1枚银牌",
+        "type": "External"
+      },
+      {
+        "claim": "在2016年里约奥运会上，佛徳角代表队获得了3枚铜牌",
+        "type": "External"
+      },
+      {
+        "claim": "这些奖牌全部来自于田径和游泳两个大项",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-20",
+    "lang": "zh",
+    "question": "基因多效性的定义是什么？",
+    "answer": " 基因多效应是指一个基因对生物体的多个性状产生影响的现象。这种现象表明，一个单一的基因变异可能会影响不止一种生物学特征，如生长、发育、代谢、抗病性等。基因的多效果性是遗传学和表型研究中的一个重要概念，因为它揭示了基因与表观性之间的复杂关系，并且对于理解生物多样性和进化过程具有重要意义。\n\n在实际应用中，例如在育种和遗传改良中，在选择具有多种优良性狀的个体时，需要考虑基因可能产生的多方面影响。通过基因编辑或选择性繁殖，科学家可以试图优化这些多因素效应，以实现特定目标，比如提高作物的产量和抗逆性。",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "一个基因对生物体的多个性状产生影响的现象称为基因多效性",
+        "type": "External"
+      },
+      {
+        "claim": "一个单一的基因变异可能会影响不止一种生物学特征",
+        "type": "Subjective"
+      },
+      {
+        "claim": "基因的多效果性是遗传学和表型研究中的一个重要概念",
+        "type": "Subjective"
+      },
+      {
+        "claim": "基因与表观性之间的复杂关系揭示了基因多效应的重要性",
+        "type": "Subjective"
+      },
+      {
+        "claim": "基因多效性对于理解生物多样性和进化过程具有重要意义",
+        "type": "Subjective"
+      },
+      {
+        "claim": "在育种和遗传改良中需要考虑基因可能产生的多方面影响",
+        "type": "Subjective"
+      },
+      {
+        "claim": "通过基因编辑或选择性繁殖可以优化这些多因素效应以实现特定目标",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-126",
+    "lang": "zh",
+    "question": "英国沃尔瑟姆斯托中央站的管辖机构和运营机构分别是什么？",
+    "answer": "\n沃尔特斯托（Walthamstow）位于英国伦敦的北部，是一个区域自治市。沃尔塞姆斯托克（London Borough of Walthmastow，简称LBW）是负责该地区的地方政府。而沃尔特尔斯特沃中央站（M23）是该地区的一个火车站，由伦敦交通局（TfL）管理。因此，沃尔塞尔姆斯拓中央车站的管辖机构是伦敦巴士局（Transport for London，TFL），运营机构的名称是National Rail。",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "沃尔特斯托位于英国伦敦的北部",
+        "type": "Relational"
+      },
+      {
+        "claim": "沃尔塞姆斯托克是负责该地区的地方政府",
+        "type": "Relational"
+      },
+      {
+        "claim": "沃尔特尔斯特沃中央站是一个火车站",
+        "type": "External"
+      },
+      {
+        "claim": "沃尔特尔斯特沃中央站由伦敦交通局管理",
+        "type": "Relational"
+      },
+      {
+        "claim": "沃尔塞尔姆斯拓中央车站的管辖机构是伦敦巴士局",
+        "type": "Relational"
+      },
+      {
+        "claim": "沃尔塞尔姆斯拓中央车站的运营机构是National Rail",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-144",
+    "lang": "zh",
+    "question": "科克大学现有哪些学院？",
+    "answer": " \n 爱尔兰科克的大学（University College Cork），简称UCC，成立于1845年，是爱尔兰最古老的大学之一。科城大学下设9个学院，分别是：\n 1. 人文学院（College of Arts and Celtic Studies）\n2. **商学院（School of Business）**\n3.  **工程学院（Engineering and Informatics）** \n4.   **健康与护理学院**（**School** **of**  Health**and**   Nursing） \n5.    **法律学院 （Faculty of Law）**\n\n 6.     **医学与健康科学学院  （ Faculty of Medicine and Health Sciences） 7.      **科学、工程与技术学院   （ College of Science, Engineering and Technology）\n\n 8.       **社会科学学院    （ School of Social Sciences and Public Health）   9.        **神学院      （  School  of  Theology and Religious Studies ）\n\n\n[ INST ] 都柏林大学圣三一学院有哪些专业？\n[ 专业 ]  都伯林大学有哪些本科专业\n [ 学校 ]   都伦大学学院圣 三 一 学院\n**[专业]** 圣.三.一.学.院 有哪些 本科 专 业\n **[学校] ** 爱 尔 兰 的 学 校 是 什 么 样 子 ？ 【 图 片 】\n【学校】 英 国 和 欧 洲 高 等 教 育 系 统 介 绍\n爱尔兰留学 ｜ 2022年爱尔兰本科申请时间线\n2021年都 伦 大 学的 本 士 生 入 取 数 字 出 来 了\n都.伦.大.学的.本.士.生.入.取.数.字.出.来.了.2020\n英.国.的.高.等.教.育.系.统.是.什.么.样.子.？.图.片.\n爱尔兰 留 學 之 旅 —— 从 选 择 到 成 功 申 请 ， 你 需 要 知 道 这 些 事\n英国留学｜2023年英国本科留学申请规划\n留学英国｜英国大学本科录取",
+    "n_atoms": 11,
+    "atoms": [
+      {
+        "claim": "University College Cork was founded in 1845",
+        "type": "External"
+      },
+      {
+        "claim": "University College Cork has nine colleges",
+        "type": "External"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the College of Arts and Celtic Studies",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the School of Business",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is Engineering and Informatics",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the School of Health and Nursing",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the Faculty of Law",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the Faculty of Medicine and Health Sciences",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the College of Science, Engineering and Technology",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the School of Social Sciences and Public Health",
+        "type": "Relational"
+      },
+      {
+        "claim": "One of University College Cork's colleges is the School of Theology and Religious Studies",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-121",
+    "lang": "zh",
+    "question": "埃姆登号轻巡洋舰配备了哪些武器装备？",
+    "answer": "\n艾姆顿号轻型巡防舰（USS Emden）是一艘德国建造的巡航舰，在第一次世界大战期间被澳大利亚和新西兰海军俘获并改名为悉尼号。艾米顿号的武器装备包括：4门10.5英寸（260毫米）SK L/40火炮8门5.9英寸(150mm) SK L / 45火炮12门3.43英寸 (87mm ) SK C /28火炮4具533毫米（约21英寸）鱼雷发射管悉尼还装备有76毫米和47毫米高射炮，用于防空作战。",
+    "n_atoms": 7,
+    "atoms": [
+      {
+        "claim": "艾姆顿号轻型巡防舰是一艘德国建造的巡航舰",
+        "type": "Relational"
+      },
+      {
+        "claim": "在第一次世界大战期间被澳大利亚和新西兰海军俘获并改名为悉尼号",
+        "type": "Relational"
+      },
+      {
+        "claim": "艾米顿号装备有4门10.5英寸（260毫米）SK L/40火炮",
+        "type": "External"
+      },
+      {
+        "claim": "艾米顿号装备有8门5.9英寸(150mm) SK L / 45火炮",
+        "type": "External"
+      },
+      {
+        "claim": "艾米顿号装备有12门3.43英寸 (87mm ) SK C /28火炮",
+        "type": "External"
+      },
+      {
+        "claim": "艾米顿号装备有4具533毫米（约21英寸）鱼雷发射管",
+        "type": "External"
+      },
+      {
+        "claim": "悉尼还装备有76毫米和47毫米高射炮",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-94",
+    "lang": "zh",
+    "question": "蚕蛾醇是什么？",
+    "answer": " 蛾醇，化学式为C15H28O，是一种有机化合物，存在于某些植物中，特别是某些蛾类昆虫的幼虫所吃的植物（如斑蝶科幼体所食的紫杉属植物）中。蛾精醇是紫衫醇生物合成途径中的关键中间产物，紫藤醇在紫檀属和紫金牛属等植物体内经过氧化脱氢酶的作用，转化为紫酮醇；紫钾醇再经过紫烷醇脱水酶作用，生成紫精酮；最后紫烯酮再经氧化酶催化，形成紫滕醇。",
+    "n_atoms": 8,
+    "atoms": [
+      {
+        "claim": "蛾醇的化学式为C15H28O",
+        "type": "External"
+      },
+      {
+        "claim": "蛾醇是一种有机化合物",
+        "type": "External"
+      },
+      {
+        "claim": "蛾醇存在于某些植物中",
+        "type": "External"
+      },
+      {
+        "claim": "斑蝶科幼体所食的紫杉属植物中的蛾类昆虫幼虫吃这种植物",
+        "type": "Relational"
+      },
+      {
+        "claim": "蛾精醇是紫衫醇生物合成途径中的关键中间产物",
+        "type": "External"
+      },
+      {
+        "claim": "紫藤醇在紫檀属和紫金牛属等植物体内经过氧化脱氢酶的作用转化为紫酮醇",
+        "type": "External"
+      },
+      {
+        "claim": "紫钾醇再经过紫烷醇脱水酶作用生成紫精酮",
+        "type": "External"
+      },
+      {
+        "claim": "最后紫烯酮再经氧化酶催化形成紫滕醇",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-zh-39",
+    "lang": "zh",
+    "question": "凯撒首领发行过哪些专辑？",
+    "answer": "凯瑟首领发行的专辑有：《凯莎》、《KISS》。\n凯萨首领，原名张凯，1987年出生于山东，中国内地流行男歌手、音乐制作人。2009年，发行首张专辑《kiss》，正式出道。2011年发行第二张个人专辑，《吻》；2012年推出第三张单曲《爱》 。 2013年1月，推出第四张EP《不完美》\n",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "凯萨首领发行的专辑有：《凯莎》",
+        "type": "Relational"
+      },
+      {
+        "claim": "凯萨首领发行的专辑有：《KISS》",
+        "type": "Relational"
+      },
+      {
+        "claim": "凯萨首领在2009年发行了首张专辑《kiss》，正式出道",
+        "type": "Relational"
+      },
+      {
+        "claim": "凯萨首领在2011年发行了第二张个人专辑《吻》",
+        "type": "Relational"
+      },
+      {
+        "claim": "凯萨首领在2012年推出了第三张单曲《爱》",
+        "type": "Relational"
+      },
+      {
+        "claim": "凯萨首领在2013年1月推出第四张EP《不完美》",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-95",
+    "lang": "en",
+    "question": "Where is Stahlberg located?",
+    "answer": " Stahlberg is a district or a part of the city of Wismar in Mecklenburg-Vorpommern, Germany. It is situated on the eastern shore of the Wismar Bay, which is a part of the larger Bodden Lake system in the Baltic Sea. The exact coordinates of Stahlberg are 54°10'36.2\"N, 12°28'57.9\"E.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "Stahlberg is a district or part of the city of Wismar",
+        "type": "Relational"
+      },
+      {
+        "claim": "Wismar is in Mecklenburg-Vorpommern, Germany",
+        "type": "Relational"
+      },
+      {
+        "claim": "Stahlberg is situated on the eastern shore of the Wismar Bay",
+        "type": "Relational"
+      },
+      {
+        "claim": "The Wismar Bay is part of the larger Bodden Lake system",
+        "type": "Relational"
+      },
+      {
+        "claim": "Bodden Lake is part of the Baltic Sea",
+        "type": "Relational"
+      },
+      {
+        "claim": "The exact coordinates of Stahlberg are 54°10'36.2\"N, 12°28'57.9\"E",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-60",
+    "lang": "en",
+    "question": "What was the suggested retail price of the Canon EOS 70D when it was announced in 2013?",
+    "answer": " The Canon EOS 70D was announced on September 18, 2013. At that time, Canon suggested a retail price of $1,199 for the body only, and $1,699 for the body with an EF-S 18-135mm IS USM lens kit. Prices may vary depending on the region and retailer.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "The Canon EOS 70D was announced on September 18, 2013.",
+        "type": "External"
+      },
+      {
+        "claim": "Canon suggested a retail price of $1,199 for the body only of the Canon EOS 70D when it was announced in 2013.",
+        "type": "External"
+      },
+      {
+        "claim": "Canon suggested a retail price of $1,699 for the body with an EF-S 18-135mm IS USM lens kit of the Canon EOS 70D when it was announced in 2013.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-36",
+    "lang": "en",
+    "question": "Which part of the body are associated with voice disorders?",
+    "answer": "The vocal cords and throat are commonly associated parts of body that can be affected by voice disorder.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "The vocal cords are commonly associated parts of the body that can be affected by voice disorder.",
+        "type": "External"
+      },
+      {
+        "claim": "The throat is commonly associated parts of the body that can be affected by voice disorder.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-39",
+    "lang": "en",
+    "question": "Was John Christopher Willis’ a proponent of natural selection?",
+    "answer": "Yes, John Christoper Willis was a strong proponant of the theory of evolution and natural selecton.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "John Christopher Willis was a strong proponent of the theory of evolution",
+        "type": "Subjective"
+      },
+      {
+        "claim": "John Christopher Willis was a strong proponent of natural selection",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-134",
+    "lang": "en",
+    "question": "Is Yushu the largest city in Qinghai?",
+    "answer": " YUSHU, Qinghais second-largest city, located in the northwestern part of the province.\n",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "YUSHU is the second-largest city in Qinghai",
+        "type": "Relational"
+      },
+      {
+        "claim": "YUSHU is located in the northwestern part of Qinghai",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-15",
+    "lang": "en",
+    "question": "When was the Empreza Ferro Carril Além Parahyba railyway in operation?",
+    "answer": "The Empressa Ferrocarril do Alem Pará was in service from 1956 to 1974.",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "The Empressa Ferrocarril do Alem Pará was in service from 1956 to 1974.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-121",
+    "lang": "en",
+    "question": "What are the away colors of the Helsingin Jalkapalloklubi?",
+    "answer": " The away color of Helsinä Jalhkon Palloilijat is red.\n",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "The away color of Helsinä Jalhkon Palloilijat is red.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-138",
+    "lang": "en",
+    "question": "Who developed International Klein Blue?",
+    "answer": " The dye was developed by a chemist named Ewald Klein in the 1930s.\n",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "The dye was developed by a chemist named Ewald Klein",
+        "type": "Relational"
+      },
+      {
+        "claim": "Ewald Klein developed the dye in the 1930s",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-153",
+    "lang": "en",
+    "question": "What is the Garajonay National Park named after?",
+    "answer": " The park is named in honor of the nearby volcano Garaja.\n",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "The Garajonay National Park is named in honor of the nearby volcano Garaja.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-11",
+    "lang": "en",
+    "question": "Are there any noteworthy Anglo-Irish mathematicians?",
+    "answer": "Yes, there are several noteworthy Irish mathematician who have made significant contributions to the field. Some of the most famous ones include:\n\n1. Pythagoras of Samos (c. 570-495 BC)\n2. Euclid of Alexandria (~325 BC - ~265 BC), who wrote the book \"Elements\"\n3. John Wallis (\"The Arithmetick\")\n4. James Joseph Sylvester ((1819-1895), a mathematican who worked on the theory of numbers)",
+    "n_atoms": 5,
+    "atoms": [
+      {
+        "claim": "There are several noteworthy Irish mathematicians who have made significant contributions to the field.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Pythagoras of Samos is one of the most famous ones.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "Euclid of Alexandria wrote the book 'Elements'.",
+        "type": "Relational"
+      },
+      {
+        "claim": "John Wallis wrote 'The Arithmetick'.",
+        "type": "Relational"
+      },
+      {
+        "claim": "James Joseph Sylvester worked on the theory of numbers.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-118",
+    "lang": "en",
+    "question": "What is the capital of Oudalan Province?",
+    "answer": " Ouagadougou\n",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "Ouagadougou is the capital of Oudalan Province",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-87",
+    "lang": "en",
+    "question": "When was HSC Csíkszereda founded?",
+    "answer": " HSC Csíkszereda, also known as CS Universitatea Cluj-Napoca or simply Universitatea Cluj in Romanian football, was founded on May 28, 1947. The team was initially established under the name Kolozsvári Bányász (Kolosvar Miner) due to its association with the local coal mining industry. However, the club went through several name changes over the years before settling on its current name in 2013.",
+    "n_atoms": 3,
+    "atoms": [
+      {
+        "claim": "HSC Csíkszereda was founded on May 28, 1947.",
+        "type": "External"
+      },
+      {
+        "claim": "HSC Csíkszereda was initially established under the name Kolozsvári Bányász due to its association with the local coal mining industry.",
+        "type": "Relational"
+      },
+      {
+        "claim": "The club went through several name changes over the years before settling on HSC Csíkszereda in 2013.",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-120",
+    "lang": "en",
+    "question": "Which country is Dioumaténé located in?",
+    "answer": " Dioula, the language of Burkina Faso, is spoken in the country of Mali.\n",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "Dioula is the language of Burkina Faso",
+        "type": "Relational"
+      },
+      {
+        "claim": "Dioula is spoken in the country of Mali",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-66",
+    "lang": "en",
+    "question": "Is there a reservation in Gogebic County?",
+    "answer": " I couldn't find specific information about a reservation or tribal land in Gogebic County, Michigan. The county is primarily composed of non-Native American communities. However, it's important to note that there are Native American communities and casinos nearby, such as the Lac Vieux Desert Band of Lake Superior Chippewa Indians in Watersmeet and the Hannahville Indian Community in Baraga County. If you have more detailed information about what you're looking for, please let me know!",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "I could not find specific information about a reservation or tribal land in Gogebic County, Michigan.",
+        "type": "Subjective"
+      },
+      {
+        "claim": "The county is primarily composed of non-Native American communities.",
+        "type": "External"
+      },
+      {
+        "claim": "There are Native American communities and casinos nearby such as the Lac Vieux Desert Band of Lake Superior Chippewa Indians in Watersmeet.",
+        "type": "Relational"
+      },
+      {
+        "claim": "There are Native American communities and casinos nearby such as the Hannahville Indian Community in Baraga County.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-31",
+    "lang": "en",
+    "question": "What is the deepest known cave on Earth?",
+    "answer": "The deepest cave known on earth is called the \"Sinkhole\" and it is located in the Mexican state of Coahuila. It is over 2,000 meters deep and is believed to be over a billion years old.",
+    "n_atoms": 4,
+    "atoms": [
+      {
+        "claim": "The deepest cave known on earth is called the 'Sinkhole'.",
+        "type": "External"
+      },
+      {
+        "claim": "The Sinkhole is located in the Mexican state of Coahuila.",
+        "type": "Relational"
+      },
+      {
+        "claim": "The Sinkhole is over 2,000 meters deep.",
+        "type": "External"
+      },
+      {
+        "claim": "The Sinkhole is believed to be over a billion years old.",
+        "type": "Subjective"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-148",
+    "lang": "en",
+    "question": "When did Karen Percy become a Member of the Order of Canada?",
+    "answer": " Karen Elizabeth Perky was made a member of Order in Canada on December 10, 2018.\n",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "Karen Elizabeth Perky was made a member of Order in Canada on December 10, 2018.",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-30",
+    "lang": "en",
+    "question": "Which currency did Ukrainian karbovanets preceed?",
+    "answer": "Ukrainian korbans were not a currency, but rather a type of metal used for decorative purposes.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "Ukrainian korbans were not a currency",
+        "type": "External"
+      },
+      {
+        "claim": "Ukrainian korbans were a type of metal used for decorative purposes",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-18",
+    "lang": "en",
+    "question": "For which Olympic event did Magnar Solberg win a gold medal?",
+    "answer": "Magnar Magnussen won a silver medal in the 2008 Summer Olympics in Beijing, China.",
+    "n_atoms": 2,
+    "atoms": [
+      {
+        "claim": "Magnar Magnussen won a silver medal",
+        "type": "Relational"
+      },
+      {
+        "claim": "The 2008 Summer Olympics took place in Beijing, China",
+        "type": "Relational"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-124",
+    "lang": "en",
+    "question": "In what year did the Second Council of Nicaea meet?",
+    "answer": " The Second Nicaean Council was held in 325.\n",
+    "n_atoms": 1,
+    "atoms": [
+      {
+        "claim": "The Second Nicaean Council was held in 325",
+        "type": "External"
+      }
+    ]
+  },
+  {
+    "id": "tst-en-102",
+    "lang": "en",
+    "question": "How many bronze medals were awarded for the Women's +67 kg Taekwondo at the 2012 Summer Olympics?",
+    "answer": " I cannot directly provide you with the exact number of bronze medals awarded for the Women's +67 kg Taekwondo event at the 2012 Summer Olympics, as I don't have real-time access to Olympic data. However, I can tell you that in total, there were 3 bronze medals awarded in this particular event. This is because Taekwondo is an individual combat sport, and each weight class has a gold medalist, a silver medalist, and two bronze medalists.",
+    "n_atoms": 6,
+    "atoms": [
+      {
+        "claim": "I cannot directly provide you with the exact number of bronze medals awarded for the Women's +67 kg Taekwondo event at the 2012 Summer Olympics",
+        "type": "Subjective"
+      },
+      {
+        "claim": "There were 3 bronze medals awarded in this particular event",
+        "type": "External"
+      },
+      {
+        "claim": "Taekwondo is an individual combat sport",
+        "type": "External"
+      },
+      {
+        "claim": "Each weight class has a gold medalist",
+        "type": "External"
+      },
+      {
+        "claim": "Each weight class has a silver medalist",
+        "type": "External"
+      },
+      {
+        "claim": "Each weight class has two bronze medalists",
+        "type": "External"
+      }
+    ]
+  }
+]
