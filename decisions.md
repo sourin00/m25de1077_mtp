@@ -1,46 +1,63 @@
 # Decision log
 
 Dated record of direction changes and the evidence that drove them. These are thesis assets:
-the "why not X" sections write themselves from here.
+the methods narrative and the "why not X" sections write themselves from here.
+
+**Current direction (D5):** a confound analysis — *what do white-box hallucination probes
+actually learn on Mu-SHROOM?* The answer, in the proxy-model setting: predominantly surface and
+topic structure, with at most a small, fragile residual that doesn't reproduce across
+languages or samples.
 
 ## D0 — Original framing
 Multi-signal trust score (sampling consistency + NLI + retrieval) over TruthfulQA / FEVER /
-HotpotQA. Archived under `docs/archive/`. Dropped in favor of a span-level multilingual
-benchmark with gold labels (Mu-SHROOM), which is directly comparable to a public leaderboard.
+HotpotQA. Archived under `docs/archive/`. Dropped for a span-level multilingual benchmark with
+gold labels (Mu-SHROOM), directly comparable to a public leaderboard.
 
 ## D1 — TRACE + SAGE
-Decompose answers into atomic claims, route by epistemic type (External / Relational /
-Subjective) to specialized verifiers; SAGE = white-box internal-vs-external "gap" as the
-Relational verifier. Chosen for novelty (no SemEval team used SAEs or the gap framing).
+Decompose answers into atomic claims, route by epistemic type, SAGE = white-box internal-vs-
+external "gap" as the Relational verifier. Chosen for novelty (no SemEval team used SAEs or the
+gap framing).
 
-## D2 — Pilot findings that reshaped the thesis
+## D2 — Pilot findings
+- Residual probe token-AUROC ≈ 0.778 (Llama) / 0.773 (Gemma); SAE-feature probe at parity
+  (0.770). Looked like real, interpretable white-box signal.
+- Gap untestable: external "assertion" on a proxy model is near-chance (CONF AUROC 0.540);
+  SAE+CONF adds no lift. Needs self-generated answers Mu-SHROOM doesn't provide. → SAGE deferred.
+- Routing doesn't help: per-route AUROC flat (Rel 0.780 / Ext 0.791 / Subj 0.708); routed IoU
+  under-performs the flat probe. Taxonomy not differentially verifiable. → routing demoted.
+- Retrieval-CSR (REFIND) ≈ chance on a proxy model (0.502).
 
-- **Substrate works.** Residual probe token-AUROC ≈ 0.778 (Llama) / 0.773 (Gemma); beats
-  flag-all in es/cs/en. White-box signal is real and model-agnostic.
-- **SAEs at parity.** SAE-feature probe 0.770 vs raw 0.773 — interpretability at no accuracy
-  cost. This becomes the core contribution.
-- **Gap untestable here.** External "assertion" measured on a proxy model (Gemma over text it
-  didn't generate) is near-chance (CONF AUROC 0.540); SAE+CONF adds no lift. The gap needs
-  self-generated answers, which Mu-SHROOM's heterogeneous generations don't provide. → SAGE
-  deferred to future work.
-- **Routing doesn't help.** Per-route AUROC is flat (Relational 0.780, External 0.791,
-  Subjective 0.708); routed IoU variants under-perform the flat probe. The taxonomy is not
-  differentially verifiable. → routing demoted to an *explanation* layer (`trace.py` becomes an
-  ablation).
-- **Retrieval-CSR collapses on proxy.** REFIND token-AUROC ≈ 0.502. Faithful REFIND would need
-  generator-scored probabilities + targeted retrieval; out of scope for the core.
+## D3 — Commit to a low-investment thesis (interpretable detector)
+Reasoning at the time: the probe worked (AUROC ~0.7) and SAEs were interpretable; lead with that
++ feature analysis + negatives. Leaderboard competitiveness (IoU 0.32 vs UCSC 0.55) parked as a
+Phase-2 stretch.
 
-## D3 — Commit to the low-investment thesis
-Interpretable SAE-feature detector + feature-interpretation study + honest negatives. Reason:
-fully validated, achievable, genuinely novel. Leaderboard competitiveness (IoU 0.32 vs UCSC
-0.55 in minimal form) is a **Phase 2** stretch, not the core claim.
+## D4 — Codebase kept flat
+Added `features.py` (SAE + forward cache), `probe.py` (per-language calibration),
+`feature_analysis.py`, `confound_check.py`.
 
-## D4 — Codebase: keep flat
-Added `features.py` (SAE + forward cache) and `probe.py` (per-language calibration) to de-
-duplicate the experiment scripts; `feature_analysis.py` for the interpretability core. No
-package restructure for now.
+## D5 — The confound result (reframes the whole thesis)
+- **Honest IoU (representative, multi-seed):** probe 0.330 ± 0.008 vs flag-all 0.310 ± 0.022;
+  lift only +0.020 ± 0.015; below UCSC's ~0.55; zh ≤ flag-all (density saturates the metric).
+- **Feature interpretation:** the predictive SAE features are TOPICS (boxing, anatomy,
+  transport, geography) and SURFACE FORM (periods, "\n\n", function words, morphology
+  fragments) — not hallucination directions.
+- **Surface-baseline control:** a 12-feature surface-only probe recovers the BULK of the
+  apparent performance — AUROC 0.692 (representative) / 0.670 (dense) vs the SAE probe's 0.690 /
+  0.709. The overall representative tie is partly averaging: per language the SAE edge is
+  +0.05 cs, +0.06 en, +0.02 zh, −0.04 es (representative) and +0.06–0.08 across all four (dense).
+- **The residual is small and fragile:** the SAE-over-surface edge is ≤ ~0.06–0.08, inverts in
+  es, and does not reproduce across samples (`surface+rare` beats surface on the dense draw but
+  not the representative one; error bars are wide, ±0.03–0.13). Not the stable edge a real
+  hallucination representation would give.
+- **Conclusion:** proxy-model white-box probing on Mu-SHROOM is PREDOMINANTLY surface/topic
+  confound — a trivial baseline recovers most of the AUROC — with at most a small, non-robust
+  residual. The earlier AUROC "successes" are largely the confound. Empirically supports the
+  internal-states skeptic critique (arXiv:2510.09033) on a multilingual benchmark.
+- **Scope:** claim is bounded to the PROXY-model setting (prober ≠ generator). Self-generation
+  (Option 1 in `scratch.md`) is the boundary and the recommended future direction.
 
-## Open / Phase-2 levers (to test if pursuing competitiveness)
-Per-language thresholds (done in `probe.py`); multi-layer features; Gemma-2-9b; span
-post-processing beyond merging adjacent flagged tokens; a faithful self-generation experiment
-to revisit the gap.
+## Open / future
+Self-generation white-box probing (prober = generator); whether the confound persists there is
+the open question. Surface-baseline + feature-interpretation controls recommended as standard
+methodology for any white-box hallucination-detection claim.
