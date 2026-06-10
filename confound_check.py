@@ -12,9 +12,10 @@ Plus a PER-LANGUAGE surface-vs-sae_full table, so the result can't be blamed on 
 Reads: surface ~ sae_full        -> signal is surface/topic confound, not hallucination.
        surface+rare > surface    -> some genuine semantic signal survives.
 
-Set eval_per_lang=20 in config.py to re-run on the dense seed-13 regime (robustness check).
+Runs on the FULL Mu-SHROOM test split per language over 5 seeds, to tighten the residual
+estimate. (First run caches the not-yet-seen items — one-time Gemma passes; the seeds are fast.)
 
-Run:  python confound_check.py     (reuses the feature cache; fast)
+Run:  python confound_check.py     (reuses the feature cache)
 """
 import string
 
@@ -28,7 +29,7 @@ from data import load_sample
 from wb import load_model
 import features as F
 
-SEEDS = [13, 41, 97]
+SEEDS = [13, 41, 97, 7, 123]
 LANGS = ("es", "cs", "zh", "en")
 _PUNCT = set(string.punctuation + "。，、？！；：（）《》「」·…—")
 
@@ -73,7 +74,7 @@ def fit_predict(Xtr, ytr, Xte):
 def run():
     model = load_model(CFG.sage_model)
     sae = F.load_sae()
-    items = load_sample(CFG.eval_per_lang)
+    items = load_sample(10_000)   # full test split per language (each lang has < 200 items)
 
     SAE, SURF, Y, ITEM, LANGTOK = [], [], [], [], []
     for idx, it in enumerate(items):

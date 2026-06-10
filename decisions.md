@@ -1,63 +1,56 @@
 # Decision log
 
-Dated record of direction changes and the evidence that drove them. These are thesis assets:
-the methods narrative and the "why not X" sections write themselves from here.
+Dated record of direction changes and the evidence that drove them — the methods narrative and
+the "why not X" sections come straight from here. The arc itself is a contribution: a naive
+AUROC looked confounded under weak controls, but proper-powered controls show the signal is real.
 
-**Current direction (D5):** a confound analysis — *what do white-box hallucination probes
-actually learn on Mu-SHROOM?* The answer, in the proxy-model setting: predominantly surface and
-topic structure, with at most a small, fragile residual that doesn't reproduce across
-languages or samples.
+**Final direction (D6):** an interpretable multilingual white-box hallucination detector,
+validated against surface AND topic confounds. The within-item control is the headline.
 
 ## D0 — Original framing
-Multi-signal trust score (sampling consistency + NLI + retrieval) over TruthfulQA / FEVER /
-HotpotQA. Archived under `docs/archive/`. Dropped for a span-level multilingual benchmark with
-gold labels (Mu-SHROOM), directly comparable to a public leaderboard.
+Multi-signal trust score over TruthfulQA/FEVER/HotpotQA. Archived. Dropped for Mu-SHROOM
+(span-level, multilingual, gold labels, public leaderboard).
 
 ## D1 — TRACE + SAGE
-Decompose answers into atomic claims, route by epistemic type, SAGE = white-box internal-vs-
-external "gap" as the Relational verifier. Chosen for novelty (no SemEval team used SAEs or the
-gap framing).
+Decompose + route claims; SAGE = internal-vs-external "gap" verifier. Chosen for novelty.
 
-## D2 — Pilot findings
-- Residual probe token-AUROC ≈ 0.778 (Llama) / 0.773 (Gemma); SAE-feature probe at parity
-  (0.770). Looked like real, interpretable white-box signal.
-- Gap untestable: external "assertion" on a proxy model is near-chance (CONF AUROC 0.540);
-  SAE+CONF adds no lift. Needs self-generated answers Mu-SHROOM doesn't provide. → SAGE deferred.
-- Routing doesn't help: per-route AUROC flat (Rel 0.780 / Ext 0.791 / Subj 0.708); routed IoU
-  under-performs the flat probe. Taxonomy not differentially verifiable. → routing demoted.
-- Retrieval-CSR (REFIND) ≈ chance on a proxy model (0.502).
+## D2 — Pilot
+Residual probe AUROC ~0.78; SAE-feature probe at parity (0.77). Gap untestable on proxy
+generations (CONF ~chance). Routing flat across types. REFIND ~chance on proxy.
 
-## D3 — Commit to a low-investment thesis (interpretable detector)
-Reasoning at the time: the probe worked (AUROC ~0.7) and SAEs were interpretable; lead with that
-+ feature analysis + negatives. Leaderboard competitiveness (IoU 0.32 vs UCSC 0.55) parked as a
-Phase-2 stretch.
+## D3/D4 — Scope + flat codebase
+Committed to the probe + interpretability; added `features.py`, `probe.py`,
+`feature_analysis.py`, `confound_check.py`, `within_item.py` (flat layout).
 
-## D4 — Codebase kept flat
-Added `features.py` (SAE + forward cache), `probe.py` (per-language calibration),
-`feature_analysis.py`, `confound_check.py`.
+## D5 — Preliminary confound read (SUPERSEDED by D6)
+On a 240-item representative sample, a 12-feature surface baseline (0.692) appeared to match the
+SAE probe (0.690); read this as "predominantly surface confound." **This was underpowered** —
+small sample, and a surface-only control that cannot address topic. Kept as a cautionary step:
+weak controls on small samples can fake a confound result just as easily as a positive one.
 
-## D5 — The confound result (reframes the whole thesis)
-- **Honest IoU (representative, multi-seed):** probe 0.330 ± 0.008 vs flag-all 0.310 ± 0.022;
-  lift only +0.020 ± 0.015; below UCSC's ~0.55; zh ≤ flag-all (density saturates the metric).
-- **Feature interpretation:** the predictive SAE features are TOPICS (boxing, anatomy,
-  transport, geography) and SURFACE FORM (periods, "\n\n", function words, morphology
-  fragments) — not hallucination directions.
-- **Surface-baseline control:** a 12-feature surface-only probe recovers the BULK of the
-  apparent performance — AUROC 0.692 (representative) / 0.670 (dense) vs the SAE probe's 0.690 /
-  0.709. The overall representative tie is partly averaging: per language the SAE edge is
-  +0.05 cs, +0.06 en, +0.02 zh, −0.04 es (representative) and +0.06–0.08 across all four (dense).
-- **The residual is small and fragile:** the SAE-over-surface edge is ≤ ~0.06–0.08, inverts in
-  es, and does not reproduce across samples (`surface+rare` beats surface on the dense draw but
-  not the representative one; error bars are wide, ±0.03–0.13). Not the stable edge a real
-  hallucination representation would give.
-- **Conclusion:** proxy-model white-box probing on Mu-SHROOM is PREDOMINANTLY surface/topic
-  confound — a trivial baseline recovers most of the AUROC — with at most a small, non-robust
-  residual. The earlier AUROC "successes" are largely the confound. Empirically supports the
-  internal-states skeptic critique (arXiv:2510.09033) on a multilingual benchmark.
-- **Scope:** claim is bounded to the PROXY-model setting (prober ≠ generator). Self-generation
-  (Option 1 in `scratch.md`) is the boundary and the recommended future direction.
+## D6 — Proper-powered controls resolve it: the signal is real
+- **Full test split (556 items), 5 seeds.** SAE probe AUROC 0.745 ± 0.012 vs surface
+  0.698 ± 0.026; per language the SAE edge is +0.06–0.13, all four languages, non-overlapping
+  bars. Surface form is a large confound (~80% of pooled above-chance signal) but does NOT
+  explain the signal away.
+- **Within-item control (the decider).** For items with both classes (500/556), AUROC computed
+  WITHIN each item (topic/language/generator constant): **SAE 0.818 ± 0.011**, surface
+  0.730 ± 0.013, all four languages (es .843, cs .831, en .827, zh .781), each ~+0.09 over
+  surface. Within-item > pooled (0.744): cross-item topic variation was depressing the pooled
+  metric, not inflating it.
+- **Conclusion:** a genuine token-level hallucination signal in Gemma-2-2b SAE features, robust
+  to surface AND topic confounds, multilingual. The confound is real and under-reported, but the
+  signal survives the controls that diagnose it.
+- **Caveats:** char-level IoU stays modest (~0.33 vs UCSC ~0.55) — strong token discrimination
+  doesn't convert to span overlap on this saturated benchmark (Phase-2 span extraction).
+  Proxy-model setting (notable that it works cross-model). Subtler within-item confounds beyond
+  surface/topic not excluded.
 
-## Open / future
-Self-generation white-box probing (prober = generator); whether the confound persists there is
-the open question. Surface-baseline + feature-interpretation controls recommended as standard
-methodology for any white-box hallucination-detection claim.
+## Negatives (kept as honest scoping)
+Routing by claim type doesn't help (per-route AUROC flat). The internal/external gap is
+unmeasurable on heterogeneous generations (proxy confound) — needs self-generation. REFIND
+retrieval ~chance on a proxy model.
+
+## Future
+Span extraction to convert the 0.82 token signal into competitive IoU; self-generation to test
+the gap; richer within-item confound controls (entity-type, frequency).

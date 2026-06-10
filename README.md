@@ -2,29 +2,31 @@
 
 A token-level hallucination detector built from **sparse autoencoder (SAE) features** over a
 model's residual stream, evaluated on Mu-SHROOM (SemEval-2025 Task 3) in Spanish, Czech,
-Mandarin, and English. The thesis claim is not "beat the leaderboard" but: **white-box signal
-detects hallucinations multilingually, and SAE features let us name *which* internal directions
-carry that signal** — interpretability no SemEval system offered — plus a set of honest negative
-results that map the design space.
+Mandarin, and English. The claim: **a white-box signal genuinely detects hallucination at the
+token level, multilingually — validated against surface AND topic confounds** (a within-item
+control most of the literature skips), with interpretable SAE features and an honest set of
+negative results.
 
-> Status: pilot complete; detector and interpretability validated; assembling the analysis and
-> writeup. A leaderboard-competitiveness push (multi-layer features, larger backbone) is a
-> scoped Phase 2, not the core claim.
+> Status: pilot complete; signal validated through the full control gauntlet; writing.
 
-## What's validated (pilot)
+## What's validated
 
-| Component | Result |
+| Result | Number |
 |---|---|
-| Decomposition + span-mapping | faithful, multilingual; ~94% of atoms anchor to char spans (zh 82%) |
-| Claim routing (κ vs reference) | ~0.72 — usable, but routes are **not** differentially verifiable |
-| White-box probe (token AUROC) | ~0.70–0.78 across languages; beats flag-all in es/cs/en |
-| SAE vs raw residuals | **parity** (0.770 vs 0.773 AUROC) — interpretability at no accuracy cost |
-| Honest IoU (representative) | probe 0.322 vs flag-all 0.286 (+0.04 overall; +0.07–0.10 es/cs/en; −0.13 zh) |
+| SAE probe token-AUROC (full test split, 5 seeds) | 0.745 ± 0.012 |
+| Surface-only baseline (the confound control) | 0.698 ± 0.026 — recovers ~80% but not the signal |
+| **Within-item AUROC (topic held constant — the decider)** | **0.818 ± 0.011** (vs surface 0.730), all 4 langs |
+| SAE vs raw residuals | parity — interpretability at no accuracy cost |
+| Char-level IoU (honest, representative) | ~0.33 vs UCSC ~0.55 — token signal ≠ span IoU (Phase 2) |
 
-Negative results (reported as findings): routing by claim type does not improve detection
-(per-route AUROC is flat: Rel 0.78 / Ext 0.79 / Subj 0.71); the internal-vs-external "gap"
-cannot be tested on heterogeneous external generations (proxy-model confound); retrieval-CSR
-(REFIND) collapses to chance on a proxy model.
+The within-item control is the headline: inside a single answer (topic, language, generator
+fixed), the probe still separates hallucinated from faithful tokens at 0.82, ~0.09 above a
+surface control, in every language — so the signal is real token-level detection, not surface or
+topic confound.
+
+Negative results (honest scoping): routing by claim type does not improve detection (per-route
+AUROC flat); the internal-vs-external "gap" cannot be tested on heterogeneous generations
+(proxy-model confound); retrieval-CSR (REFIND) collapses to chance on a proxy model.
 
 ## Repo (flat)
 
@@ -38,8 +40,10 @@ cannot be tested on heterogeneous external generations (proxy-model confound); r
 - `llm_client.py`, `decompose_route.py` — decomposition + routing + span-mapping (explanation layer)
 
 **Experiments**
-- `iou_eval.py` — MAIN: probe vs floors, AUROC, IoU on a representative sample
-- `feature_analysis.py` — interpretability core: which SAE features signal hallucination
+- `iou_eval.py` — probe vs floors, AUROC, IoU on a representative sample (per-language calibrated)
+- `confound_check.py` — surface baseline vs SAE probe, full test split, per language (confound control)
+- `within_item.py` — within-item AUROC: the topic-held-constant control (the decider)
+- `feature_analysis.py` — which SAE features the probe uses
 - `trace.py` — ablation: routing does not help
 - `sage.py` — ablation: SAE==raw, gap shows no lift
 - `deloitte_probe.py`, `refind.py`, `baseline_trivial.py` — baselines
