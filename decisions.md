@@ -41,8 +41,9 @@ weak controls on small samples can fake a confound result just as easily as a po
 - **Conclusion:** a genuine token-level hallucination signal in Gemma-2-2b SAE features, robust
   to surface AND topic confounds, multilingual. The confound is real and under-reported, but the
   signal survives the controls that diagnose it.
-- **Caveats:** char-level IoU stays modest (~0.33 vs UCSC ~0.55) — strong token discrimination
-  doesn't convert to span overlap on this saturated benchmark (Phase-2 span extraction).
+- **Caveats:** char-level IoU is $0.396$ vs FLAG-ALL $0.313$ (full split, 5 seeds; clears the
+  floor in all four languages, ties zh) but still below UCSC ~$0.55$ — converting strong token
+  discrimination into competitive spans is the Phase-2 span-extraction problem.
   Proxy-model setting (notable that it works cross-model). Subtler within-item confounds beyond
   surface/topic not excluded.
 

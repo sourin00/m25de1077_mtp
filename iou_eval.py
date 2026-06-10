@@ -20,7 +20,7 @@ import metrics
 import features as F
 import probe as P
 
-SEEDS = [13, 41, 97]
+SEEDS = [13, 41, 97, 7, 123]
 
 
 def _ms(xs):
@@ -31,7 +31,7 @@ def _ms(xs):
 def run():
     model = load_model(CFG.sage_model)
     sae = F.load_sae()
-    items = load_sample(CFG.eval_per_lang)
+    items = load_sample(10_000)   # full test split per language (matches confound/within-item)
 
     data, dens = [], []
     for i, it in enumerate(items):

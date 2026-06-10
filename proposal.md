@@ -61,7 +61,9 @@ error bars; per-language reporting; surface and within-item controls as primary 
 
 ## 6. Caveats and scope
 
-Char-level IoU stays modest (~0.33 vs UCSC ~0.55): strong token discrimination does not convert
+Char-level IoU is $0.396$ vs a FLAG-ALL floor of $0.313$ (full split, 5 seeds; the probe clears
+the floor in all four languages, tying densely-hallucinated Mandarin), still below UCSC ~$0.55$:
+strong token discrimination does not fully convert
 to competitive span overlap on this base-rate-saturated benchmark — a span-extraction problem,
 not a signal problem (Phase 2). Proxy-model setting (the probe detects hallucination in text the
 model didn't generate — robust, but the gap method still needs self-generation). Within-item

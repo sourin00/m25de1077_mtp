@@ -17,7 +17,7 @@ negative results.
 | Surface-only baseline (the confound control) | 0.698 ± 0.026 — recovers ~80% but not the signal |
 | **Within-item AUROC (topic held constant — the decider)** | **0.818 ± 0.011** (vs surface 0.730), all 4 langs |
 | SAE vs raw residuals | parity — interpretability at no accuracy cost |
-| Char-level IoU (honest, representative) | ~0.33 vs UCSC ~0.55 — token signal ≠ span IoU (Phase 2) |
+| Char-level IoU (full split, 5 seeds, per-lang threshold) | 0.396 vs FLAG-ALL 0.313 (+0.084); clears the floor in all 4 langs; UCSC ~0.55 |
 
 The within-item control is the headline: inside a single answer (topic, language, generator
 fixed), the probe still separates hallucinated from faithful tokens at 0.82, ~0.09 above a
@@ -40,7 +40,7 @@ AUROC flat); the internal-vs-external "gap" cannot be tested on heterogeneous ge
 - `llm_client.py`, `decompose_route.py` — decomposition + routing + span-mapping (explanation layer)
 
 **Experiments**
-- `iou_eval.py` — probe vs floors, AUROC, IoU on a representative sample (per-language calibrated)
+- `iou_eval.py` — probe vs floors, AUROC, IoU on the full test split (per-language calibrated)
 - `confound_check.py` — surface baseline vs SAE probe, full test split, per language (confound control)
 - `within_item.py` — within-item AUROC: the topic-held-constant control (the decider)
 - `feature_analysis.py` — which SAE features the probe uses
