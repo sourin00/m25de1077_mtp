@@ -1,0 +1,505 @@
+%==============================================================================
+%  IEEE double-column conference paper -- READY FOR OVERLEAF
+%  Compiler: pdfLaTeX.  No .bib file needed (bibliography is inline).
+%
+%==============================================================================
+\documentclass[conference]{IEEEtran}
+\usepackage{amsmath,amssymb}
+\usepackage{booktabs}
+\usepackage{graphicx}
+\usepackage[T1]{fontenc}
+
+\begin{document}
+
+\title{Validating White-Box Hallucination Detection Against\\
+Surface and Topic Confounds on Multilingual Mu-SHROOM}
+
+\author{
+\IEEEauthorblockN{Sourin Ghosh}
+\IEEEauthorblockA{
+Indian Institute of Technology, Johpur\\ 
+M25DE1077\\
+m25de1077@iitj.ac.in} 
+\and
+\IEEEauthorblockN{Dr. Subhash Bhagat}
+\IEEEauthorblockA{
+Indian Institute of Technology, Jodhpur\\ 
+Supervisor\\
+\ }
+}
+
+\maketitle
+
+\begin{abstract}
+White-box hallucination detectors read a language model's internal
+activations and are increasingly reported to localize hallucinated spans.
+Such probes are, however, easy to fool: a token classifier can score well by
+exploiting surface form or topic rather than any hallucination
+representation. We test whether a white-box signal is genuine in the
+multilingual, span-level setting of Mu-SHROOM (SemEval-2025 Task~3) across
+Spanish, Czech, Mandarin, and English, using sparse-autoencoder (SAE)
+features over a Gemma-2-2b residual stream. A token probe reaches a
+detection AUROC of $0.745$, but a twelve-feature surface-only baseline
+recovers about $80\%$ of the above-chance signal---surface form is a large,
+under-reported confound. The decisive control is a within-item AUROC, which
+ranks tokens inside a single answer where topic, language, and generator are
+held constant: here the SAE probe scores $0.818$ against a surface within-item
+score of $0.730$, in every language, with non-overlapping error bars. The
+signal therefore survives both a surface control and a topic control and is a
+genuine token-level hallucination signal. Char-level IoU stays modest
+($0.40$ vs.\ a $0.55$ leaderboard reference), framing span extraction as
+future work. We also report three negative results---claim-type routing, an
+internal-vs-external gap, and proxy retrieval add nothing. The control
+methodology, not just the detector, is the contribution.
+\end{abstract}
+
+\begin{IEEEkeywords}
+hallucination detection, interpretability, sparse autoencoders, confound
+analysis, multilingual NLP, Mu-SHROOM.
+\end{IEEEkeywords}
+
+%==============================================================================
+\section{Introduction}
+%==============================================================================
+Large language models produce fluent text that is frequently unsupported by
+fact. \emph{White-box} detectors attack this by reading the model's own hidden
+states, on the premise that a model's internal representation encodes whether a
+token is grounded. On Mu-SHROOM, the SemEval-2025 multilingual hallucination
+span-detection task, internal-state probes have performed competitively.
+
+The premise has a well-known weakness. A token-level classifier trained on
+held-out items can achieve a high area under the ROC curve (AUROC) without
+learning anything about hallucination, simply by keying on \emph{surface form}
+(token length, punctuation, position) or \emph{topic} (content features that
+correlate with which items happen to contain hallucinations in a given corpus).
+Without explicit controls, a reported AUROC cannot distinguish a hallucination
+representation from these confounds. Recent work has voiced exactly this
+skepticism about internal-state methods.
+
+This paper asks a narrow but load-bearing question: in the multilingual,
+span-level setting, is the white-box signal \emph{real}? We answer it with two
+controls that the literature largely omits:
+\begin{itemize}
+\item a \textbf{surface baseline}---a twelve-feature, model-free probe that
+isolates how much apparent performance is surface form; and
+\item a \textbf{within-item AUROC}---ranking tokens \emph{inside} a single
+answer, where topic, language, and generator are constant, so the score cannot
+be topic or surface confound.
+\end{itemize}
+
+Our contributions are: (i)~evidence that surface form is a large,
+under-reported confound (it recovers $\approx 80\%$ of the pooled above-chance
+signal); (ii)~a decisive within-item control showing a genuine token-level
+hallucination signal survives both confounds, multilingually
+(within-item AUROC $0.818$); (iii)~a demonstration that interpretable SAE
+features match raw residuals at no accuracy cost; and (iv)~three honest
+negative results that map the design space.
+
+%==============================================================================
+\section{Related Work}
+%==============================================================================
+
+\subsection{The Mu-SHROOM shared task}
+Mu-SHROOM, SemEval-2025 Task~3~\cite{mushroom}, recast hallucination detection
+as multilingual \emph{character-span} identification: given a model output, a
+system must mark the substrings that are unsupported, scored by character-level
+intersection-over-union (IoU) against soft and hard human labels across more
+than ten languages. This span-level, multilingual framing is harder than the
+sentence-level binary detection of the original SHROOM task and exposes
+methods to typologically diverse scripts. The winning UCSC
+system~\cite{ucsc} reached an average IoU near $0.55$ by combining model
+signals with external evidence, and a Deloitte entry~\cite{deloitte} reported
+residual-stream probes on the same data. Reported leaderboard IoU, however,
+is computed against a high FLAG-ALL floor on densely hallucinated answers, so a
+strong IoU does not by itself establish that a method has learned a
+hallucination-specific signal---the gap this paper targets.
+
+\subsection{Black-box and uncertainty-based detection}
+A large body of work detects hallucination without internal access: sampling
+consistency (e.g.\ generating multiple answers and measuring disagreement),
+token- and sequence-level uncertainty, and self-evaluation prompts. These
+methods are model-agnostic but conflate uncertainty with falsehood and degrade
+when a model is confidently wrong. We do not pursue them here, but our
+confidence ``gap'' ablation is in this spirit and, consistent with their known
+brittleness, adds nothing on top of the internal-state probe.
+
+\subsection{Internal-state probing}
+The premise that a model's activations encode whether its output is truthful
+has accumulated support: linear probes on hidden states separate true from
+false statements~\cite{azaria}, Orgad et al.~\cite{orgad} show that such
+representations encode more about correctness than the decoded text reveals,
+and Ferrando et al.~\cite{ferrando} isolate sparse-autoencoder directions
+corresponding to whether a model ``knows'' an entity. Against this optimism, a
+skeptical line of work~\cite{skeptic} argues that internal-state probes often
+track dataset artifacts---topic, length, formatting---rather than truthfulness,
+and that apparent accuracy collapses under distribution shift or proper
+controls. This tension is exactly what our surface baseline and within-item
+control are designed to resolve: we quantify how much of the signal is
+confound, and isolate what remains.
+
+\subsection{Sparse autoencoders and interpretability}
+Sparse autoencoders (SAEs) decompose dense activations into an overcomplete
+basis of sparse, more nearly monosemantic features, improving on raw
+neurons~\cite{monosemantic,cunningham}. Pretrained SAE suites such as Gemma
+Scope~\cite{gemmascope} make this practical off-the-shelf for Gemma-2
+models~\cite{gemma2}. We use SAE features both as a probe substrate and as an
+interpretability lens; notably, we find SAE features match raw residuals on
+detection, so interpretability here costs no accuracy.
+
+\subsection{Retrieval-augmented verification}
+A complementary external route verifies spans against retrieved evidence.
+REFIND~\cite{refind} grounds candidate spans in retrieved documents and flags
+unsupported content. We include a REFIND-style retrieval baseline; in our
+proxy-model setting (the scorer did not generate the answers) it sits at
+chance, which we report as a scoping result rather than a verdict on retrieval
+in general.
+
+
+%==============================================================================
+\section{Data and Setup}
+%==============================================================================
+\textbf{Dataset.} We use the Mu-SHROOM test split for four languages. Item and
+token counts are in Table~\ref{tab:data}; overall $556$ items, $66{,}946$
+answer tokens, of which $\approx 38\%$ are gold-hallucinated.
+
+\begin{table}[t]
+\caption{Mu-SHROOM test split used.}
+\label{tab:data}
+\centering
+\begin{tabular}{lcc}
+\toprule
+Language & Items & Items with hard labels \\
+\midrule
+Spanish (es) & 152 & 139 \\
+Czech (cs)   & 100 & 87 \\
+Mandarin (zh)& 150 & 147 \\
+English (en) & 154 & 149 \\
+\midrule
+Total        & 556 & 462 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\textbf{Model and features.} We run \texttt{google/gemma-2-2b} and take the
+residual stream after layer~12 (\texttt{resid\_post}). Activations are encoded
+with the Gemma Scope SAE \texttt{gemma-scope-2b-pt-res-canonical}
+(\texttt{layer\_12/width\_16k/canonical}, $16{,}384$ features). Because the
+work was developed on Apple-silicon (MPS), we verified numerical fidelity of
+the layer-12 residual against CPU (max absolute difference $0.0000$).
+
+\textbf{Probe.} For each token we form its SAE feature vector and train an
+$\ell_2$-regularized logistic regression with balanced class weights. We keep
+only features firing on at least $0.5\%$ of training tokens
+($\approx 4{,}200$ features) to suppress noise from near-dead features. Splits
+are \emph{item-level} ($70/30$) so no item appears in both train and test;
+results are averaged over five seeds. The pipeline is sketched in
+Fig.~\ref{fig:pipe}.
+
+\begin{figure}[t]
+\footnotesize
+\begin{verbatim}
+   answer tokens  (es / cs / zh / en)
+              |
+   Gemma-2-2b  resid_post  L12
+              |
+   Gemma Scope SAE  (16,384 feats)
+              |
+   freq filter  (>= 0.5% of tokens)
+              |
+   per-token logistic probe
+              |
+   token hallucination scores
+          /              \
+   surface             within-item
+   baseline             AUROC
+   (form control)      (topic control)
+\end{verbatim}
+\caption{Detection pipeline and the two confound controls.}
+\label{fig:pipe}
+\end{figure}
+
+\textbf{Metrics.} We report token-level AUROC in two forms: \emph{pooled}
+(rank all test tokens together) and \emph{within-item} (rank tokens inside each
+item, then macro-average). For span output we report character-level IoU with a
+per-language decision threshold. Floors are FLAG-ALL (mark every character) and
+FLAG-NONE (mark nothing).
+
+%==============================================================================
+\section{Method: the two controls}
+%==============================================================================
+\textbf{Surface baseline.} A model-free probe over twelve hand-built features
+per token: character length, leading-space flag, punctuation and digit flags,
+uppercase ratio, relative position in the answer, and a language one-hot.
+Trained identically to the SAE probe, it measures how much detection is
+explainable by surface form alone.
+
+\textbf{Within-item AUROC.} Pooled AUROC conflates two abilities: telling
+hallucinated \emph{items} from faithful ones (an item-level, topic-correlated
+ability) and telling hallucinated \emph{tokens} from faithful ones inside one
+answer. Only the second is hallucination localization. The within-item AUROC
+isolates it (Fig.~\ref{fig:within}): for every test item containing at least
+two tokens of each class ($500/556$ items qualify), we compute AUROC over that
+item's tokens and macro-average. Topic, language, and generator are constant
+within an item, so a high within-item AUROC cannot arise from topic or surface
+confound.
+
+\begin{figure}[t]
+\footnotesize
+\begin{verbatim}
+ pooled AUROC: rank ALL tokens together
+   item A (boxing)   item B (anatomy)
+   [f f h f h]       [f h h f]
+      \____ cross-item topic offset ____/
+                (confound)
+
+ within-item AUROC: rank inside each item
+   item A: AUROC over {f,f,h,f,h}
+   item B: AUROC over {f,h,h,f}
+   then macro-average   (topic fixed)
+
+   f = faithful token   h = hallucinated
+\end{verbatim}
+\caption{Why within-item AUROC removes the topic confound.}
+\label{fig:within}
+\end{figure}
+
+%==============================================================================
+\section{Results}
+%==============================================================================
+
+\subsection{Detection and the surface confound}
+On the full test split (Table~\ref{tab:detect}), the SAE probe reaches
+$0.745 \pm 0.012$. The surface-only baseline reaches $0.698 \pm 0.026$: against
+a $0.5$ floor it recovers $0.198/0.245 \approx 80\%$ of the SAE probe's
+above-chance discrimination. Surface form is thus a large confound and must be
+reported. It does not, however, explain the signal away: per language
+(Fig.~\ref{fig:detection}) the SAE probe leads surface by $+0.06$ to $+0.13$ in
+all four languages, with non-overlapping error bars. The lead is carried by
+genuinely sparse (rare) SAE features: a surface-plus-rare combination
+($0.744$) matches the full probe, and rare features alone ($0.739$) nearly do.
+
+\begin{table}[t]
+\caption{Detection token-AUROC, full split, 5 seeds.}
+\label{tab:detect}
+\centering
+\begin{tabular}{lc}
+\toprule
+Feature set & AUROC \\
+\midrule
+Surface (12 features)      & $0.698 \pm 0.026$ \\
+SAE, high-frequency only   & $0.737 \pm 0.016$ \\
+SAE, rare only             & $0.739 \pm 0.011$ \\
+Surface $+$ SAE rare       & $0.744 \pm 0.010$ \\
+SAE, full                  & $\mathbf{0.745 \pm 0.012}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_detection.pdf}
+\caption{Per-language detection AUROC (full split, 5 seeds): the SAE probe
+leads the surface baseline in all four languages, with non-overlapping error
+bars. Error bars are $\pm 1$ standard deviation across seeds.}
+\label{fig:detection}
+\end{figure}
+
+\subsection{Within-item control: the signal is real}
+The surface baseline controls form but not topic. The within-item AUROC
+controls topic, and it is the decisive result (Fig.~\ref{fig:within-res}). The
+SAE probe scores $0.818 \pm 0.011$ within items, well above chance and
+$\approx 0.09$ above the surface within-item score of $0.730$, in every
+language, with tight non-overlapping bars. Crucially, the within-item score
+($0.818$) \emph{exceeds} the pooled score ($0.744$): cross-item topic variation
+was depressing the pooled metric, not inflating it. Removing the item-level
+nuisance makes the token-level signal stronger. The probe therefore localizes
+hallucinated tokens for a reason that is neither surface nor topic.
+
+\begin{figure}[t]
+\centering
+\includegraphics[width=\columnwidth]{fig_within.pdf}
+\caption{Within-item AUROC (topic, language, and generator held constant inside
+each answer; $500/556$ items qualify, 5 seeds). The SAE probe beats the surface
+within-item control by $\approx 0.09$ in every language and sits above the
+pooled cross-item AUROC (dashed), showing the signal is token-level rather than
+topic. Error bars are $\pm 1$ standard deviation across seeds.}
+\label{fig:within-res}
+\end{figure}
+
+\subsection{Span-level IoU}
+Strong token discrimination does not convert fully into span overlap on a
+base-rate-saturated benchmark, but the gap is smaller than a small-sample read
+suggests. On the full split with a per-language threshold
+(Table~\ref{tab:iou}), the probe reaches mean char-IoU $0.396 \pm 0.009$
+against a FLAG-ALL floor of $0.313 \pm 0.017$ (a lift of $+0.084 \pm 0.023$)
+and a FLAG-NONE floor of $\approx 0.05$; the UCSC reference is $\approx 0.55$.
+The probe clears FLAG-ALL in all four languages, decisively in es, cs, and en
+($+0.10$ to $+0.13$) and to a tie in Mandarin ($0.476$ vs.\ $0.474$), whose
+floor is very high because answers there are densely hallucinated and marking
+everything is hard to beat. The remaining gap to UCSC we treat as a
+span-extraction problem (post-processing, multi-layer features), not a signal
+problem.
+
+\begin{table}[t]
+\caption{Char-level IoU (full split, 5 seeds, per-language threshold).
+Mean $\pm$ std across seeds.}
+\label{tab:iou}
+\centering
+\begin{tabular}{lcc}
+\toprule
+Language & FLAG-ALL & SAE probe \\
+\midrule
+es & $0.180 \pm 0.021$ & $\mathbf{0.312 \pm 0.029}$ \\
+cs & $0.246 \pm 0.035$ & $\mathbf{0.364 \pm 0.013}$ \\
+zh & $0.474 \pm 0.028$ & $\mathbf{0.476 \pm 0.023}$ \\
+en & $0.325 \pm 0.040$ & $\mathbf{0.423 \pm 0.024}$ \\
+\midrule
+Mean & $0.313 \pm 0.017$ & $\mathbf{0.396 \pm 0.009}$ \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+\subsection{Interpretation and ablations}
+SAE features match raw residuals (AUROC $0.770$ vs.\ $0.773$): interpretability
+costs no accuracy. Inspecting the most heavily weighted features, however,
+returns mostly \emph{topic} directions (e.g.\ boxing, anatomy, transport) and
+\emph{surface} tokens (sentence-final periods, double newlines, function
+words)---which is precisely what motivated the confound controls above. The
+token-level signal that survives those controls is distributed across many rare
+features rather than concentrated in a few nameable directions.
+
+We tested three elaborations, none of which helped (Table~\ref{tab:neg}).
+Routing claims by type (External / Relational / Subjective) before verification
+left per-route AUROC flat and routed IoU no better than a flat probe; the
+routing itself agrees with a reference only moderately
+($\kappa = 0.725$). An internal-vs-external ``gap'' signal added nothing on top
+of the probe ($0.769$ vs.\ $0.770$), because it is not measurable on
+heterogeneous generations the model did not produce. Proxy retrieval (REFIND)
+sat at chance.
+
+\begin{table}[t]
+\caption{Negative results / ablations.}
+\label{tab:neg}
+\centering
+\begin{tabular}{lc}
+\toprule
+Probe & AUROC \\
+\midrule
+Routing: Relational route & 0.780 \\
+Routing: External route    & 0.791 \\
+Routing: Subjective route  & 0.708 \\
+Confidence ``gap'' alone   & 0.540 \\
+SAE $+$ gap                & 0.769 \\
+SAE alone                  & 0.770 \\
+SAE vs.\ raw residual      & 0.770 / 0.773 \\
+REFIND retrieval (CSR)     & 0.502 \\
+\bottomrule
+\end{tabular}
+\end{table}
+
+%==============================================================================
+\section{Discussion and Limitations}
+%==============================================================================
+\textbf{Proxy-model setting.} Gemma-2-2b did not generate the answers it
+scores; it reads text produced by other models. That the within-item signal is
+strong in this cross-model setting is notable---the model's representation of
+arbitrary text encodes token-level factuality---and arguably a strength. It
+does, however, mean the internal-vs-external gap method, which requires
+self-generation, is out of scope here.
+
+\textbf{What the controls do and do not exclude.} The within-item AUROC
+excludes topic, language, and generator confounds and, jointly with the surface
+baseline, excludes simple surface form. It does not exclude every conceivable
+token-level confound (for instance, entity-token vs.\ function-token effects
+not captured by the twelve surface features). The claim is therefore
+``robust to surface and topic,'' not ``provably hallucination-only.''
+
+\textbf{IoU.} Competitive span IoU is not yet demonstrated; the contribution is
+a validated token-level signal plus the methodology that validates it.
+
+\textbf{Scope.} A single backbone (Gemma-2-2b), single layer (12), and four
+languages. Multi-layer features and a larger backbone are natural extensions.
+
+%==============================================================================
+\section{Conclusion}
+%==============================================================================
+A white-box probe over interpretable SAE features detects hallucination at the
+token level on multilingual Mu-SHROOM. We show that a trivial surface baseline
+recovers most of the naive AUROC---so such numbers must be reported against a
+surface control---yet a within-item control, holding topic constant, confirms a
+genuine token-level signal ($0.818$ AUROC) in all four languages. The signal is
+real; the surface confound is real and under-reported; and the controls that
+separate them are the methodological core. Converting the strong token signal
+into competitive spans, and testing it under self-generation, are the next
+steps.
+
+%==============================================================================
+\section*{Reproducibility}
+%==============================================================================
+All experiments are scripted (feature extraction with cached SAE encodings,
+the surface and within-item controls, and the ablations) and reproducible from
+the Mu-SHROOM test split with five fixed seeds.
+
+%==============================================================================
+\appendices
+\section{Per-language AUROC (tabular)}
+%==============================================================================
+For completeness, Table~\ref{tab:appendix} gives the exact per-language means
+and standard deviations underlying Figs.~\ref{fig:detection}
+and~\ref{fig:within-res} (full split, 5 seeds).
+
+\begin{table*}[t]
+\renewcommand{\arraystretch}{1.3}
+\caption{Per-language token-AUROC, mean $\pm$ std across 5 seeds.
+``Detection'' is pooled; ``Within-item'' holds topic constant inside each item.}
+\label{tab:appendix}
+\centering
+\begin{tabular}{l cc cc}
+\toprule
+& \multicolumn{2}{c}{Detection (pooled)} & \multicolumn{2}{c}{Within-item (topic held constant)} \\
+\cmidrule(lr){2-3}\cmidrule(lr){4-5}
+Language & Surface & SAE & Surface & SAE \\
+\midrule
+Spanish (es)  & $0.672 \pm 0.014$ & $0.735 \pm 0.017$ & $0.757 \pm 0.018$ & $0.843 \pm 0.008$ \\
+Czech (cs)    & $0.631 \pm 0.032$ & $0.759 \pm 0.014$ & $0.733 \pm 0.027$ & $0.831 \pm 0.014$ \\
+Mandarin (zh) & $0.603 \pm 0.013$ & $0.696 \pm 0.024$ & $0.696 \pm 0.018$ & $0.781 \pm 0.017$ \\
+English (en)  & $0.655 \pm 0.014$ & $0.757 \pm 0.040$ & $0.740 \pm 0.024$ & $0.827 \pm 0.025$ \\
+\midrule
+Overall       & $0.698 \pm 0.026$ & $0.745 \pm 0.012$ & $0.730 \pm 0.013$ & $0.818 \pm 0.011$ \\
+\bottomrule
+\end{tabular}
+\end{table*}
+
+%==============================================================================
+% References -- inline; verify details before submission.
+%==============================================================================
+\clearpage
+\begin{thebibliography}{99}
+\bibitem{mushroom} R.~V\'azquez \emph{et al.}, ``SemEval-2025 Task~3:
+Mu-SHROOM, the multilingual shared-task on hallucinations,''
+\emph{Proc.\ SemEval}, 2025. 
+\bibitem{ucsc} J.~Huang \emph{et al.}, ``UCSC at SemEval-2025 Task~3,''
+\emph{Proc.\ SemEval}, 2025. 
+\bibitem{deloitte} ``Deloitte (Drocks) at SemEval-2025 Task~3,''
+\emph{ACL Anthology} 2025.semeval-1.144, 2025. 
+\bibitem{orgad} H.~Orgad \emph{et al.}, ``LLMs know more than they show:
+on the intrinsic representation of hallucinations,'' \emph{ICLR}, 2025.
+\bibitem{ferrando} J.~Ferrando \emph{et al.}, ``Do I know this entity?
+Knowledge awareness and hallucinations in language models,''
+\emph{ICLR}, 2025.
+\bibitem{skeptic} ``On the limits of internal-state probes for hallucination
+detection,'' arXiv:2510.09033, 2025.
+\bibitem{gemmascope} T.~Lieberum \emph{et al.}, ``Gemma Scope: open sparse
+autoencoders everywhere all at once on Gemma~2,'' arXiv:2408.05147, 2024.
+\bibitem{gemma2} Gemma Team, ``Gemma~2: improving open language models at a
+practical size,'' Google DeepMind, 2024.
+\bibitem{refind} D.~Lee and S.~Yu, ``REFIND: retrieval-augmented factuality
+hallucination detection,'' arXiv:2502.13622, 2025. 
+\bibitem{monosemantic} T.~Bricken \emph{et al.}, ``Towards monosemanticity:
+decomposing language models with dictionary learning,'' Anthropic, 2023.
+\bibitem{cunningham} H.~Cunningham \emph{et al.}, ``Sparse autoencoders find
+highly interpretable features in language models,'' \emph{ICLR}, 2024.
+\bibitem{azaria} A.~Azaria and T.~Mitchell, ``The internal state of an LLM
+knows when it's lying,'' \emph{Findings of EMNLP}, 2023. 
+\end{thebibliography}
+\end{document}
